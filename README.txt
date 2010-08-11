@@ -12,6 +12,9 @@ src/
 		flex/  -- JuiceKit core Flex4 unit tests
 		          The unit tests can be run most easily in Intellij.
 
+scripts/
+	-- Contains scripts to generate documentation using asdoc
+
 
 
 
@@ -21,9 +24,6 @@ To use the library from source, In your workspace, clone the juicekit-flex-core 
 
 $ cd {your workspace}
 $ git clone git@github.com:chrisgemignani/juicekit-flex-core.git
-
-
-
 
 
 # Intellij IDEA
