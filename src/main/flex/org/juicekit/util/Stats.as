@@ -140,6 +140,20 @@ package org.juicekit.util
 		public function get distinct():Number {
 			return _distinct;
 		}
+
+		/** 
+		 * Get a percentile value
+		 * 
+		 * @param p a percentile between 0 and 1
+		 * @return a percentile value for the input p. If the percentile falls between two values, a weighted average will be returned.
+		 */
+		public function getPercentile(p:Number):Number {
+			const N:int = _num - 1;
+			const pval:Number = p * N;
+			p = Maths.clampValue(p, 0, 1);
+			return (pval - Math.floor(pval)) * _elm[Math.ceil(pval) as int] + (Math.ceil(pval) - pval) * _elm[Math.floor(pval) as int];
+		}
+
 		
 		/** The minimum value (for date/time values). */
 		public function get minDate():Date {
@@ -240,12 +254,9 @@ package org.juicekit.util
 			{
 				
 				//Calculate the 2.5th and the 97.5th percentile of the data
-				var plow:Number = .025 * N;
-				var phigh:Number = .975 * N;
-				
-				_percentileLow = (plow - Math.floor(plow)) * _elm[Math.ceil(plow) as int] + (Math.ceil(plow) - plow) * _elm[Math.floor(plow) as int];
-				_percentileHigh = (phigh - Math.floor(phigh)) * _elm[Math.ceil(phigh) as int] + (Math.ceil(phigh) - phigh) * _elm[Math.floor(phigh) as int];
-				
+				_percentileLow = this.getPercentile(0.025);
+				_percentileHigh = this.getPercentile(0.975);
+
 				_min = (_minObject = _elm[0]) as Number;
 				_max = (_maxObject = _elm[N]) as Number;
 				
