@@ -12,17 +12,28 @@ The org.juicekit.animate package contains Transitioners and Tweens.
 			]]>
 			</description>
 		</package>
-		<package name="org.juicekit.animate.interpolate">
-			<shortDescription>
-			<![CDATA[
+        <package name="org.juicekit.animate.interpolate">
+            <shortDescription>
+            <![CDATA[
 The org.juicekit.animate.interpolate package provides interpolators for many common objects
-			]]>
-			</shortDescription>
-			<description>
-			<![CDATA[
+            ]]>
+            </shortDescription>
+            <description>
+            <![CDATA[
 The org.juicekit.animate.interpolate package provides interpolators for many common objects
-			]]>
-			</description>
-		</package>
+            ]]>
+            </description>
+        </package>
+        <package name="org.juicekit.containers">
+            <shortDescription>
+            <![CDATA[
+The org.juicekit.containers package contains specialized containers useful for data-intensive applications.
+            ]]>
+            </shortDescription>
+            <description>
+            <![CDATA[
+The org.juicekit.containers package contains specialized containers useful for data-intensive applications.            ]]>
+            </description>
+        </package>
 	</packages>
 </overviews>
