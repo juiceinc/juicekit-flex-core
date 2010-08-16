@@ -148,10 +148,15 @@ package org.juicekit.util
 		 * @return a percentile value for the input p. If the percentile falls between two values, a weighted average will be returned.
 		 */
 		public function getPercentile(p:Number):Number {
+			p = Maths.clampValue(p, 0, 1);
 			const N:int = _num - 1;
 			const pval:Number = p * N;
-			p = Maths.clampValue(p, 0, 1);
-			return (pval - Math.floor(pval)) * _elm[Math.ceil(pval) as int] + (Math.ceil(pval) - pval) * _elm[Math.floor(pval) as int];
+			
+			if (pval == Math.floor(pval)) {
+				return _elm[pval];	
+			} else {
+				return (pval - Math.floor(pval)) * _elm[Math.ceil(pval) as int] + (Math.ceil(pval) - pval) * _elm[Math.floor(pval) as int];
+			}
 		}
 
 		
