@@ -32,6 +32,7 @@
 
 package org.juicekit.util
 {
+	import flash.events.EventDispatcher;
 	
 	
 	
@@ -40,7 +41,8 @@ package org.juicekit.util
 	/**
 	 * Utility class for computing statistics for a collection of values.
 	 */
-	public class Stats
+	[Bindable]
+	public class Stats extends EventDispatcher
 	{
 		/** Constant indicating numerical values. */
 		public static const NUMBER:int = 0;
@@ -158,6 +160,35 @@ package org.juicekit.util
 				return (pval - Math.floor(pval)) * _elm[Math.ceil(pval) as int] + (Math.ceil(pval) - pval) * _elm[Math.floor(pval) as int];
 			}
 		}
+
+		/** Get the 1st percentile value */
+		public function get percentile1():Number { return getPercentile(0.01); }
+		/** Get the 5th percentile value */
+		public function get percentile5():Number { return getPercentile(0.05); }
+		/** Get the 10th percentile value */
+		public function get percentile10():Number { return getPercentile(0.10); }
+		/** Get the 20th percentile value */
+		public function get percentile20():Number { return getPercentile(0.20); }
+		/** Get the 25th percentile value */
+		public function get percentile25():Number { return getPercentile(0.25); }
+		/** Get the 40th percentile value */
+		public function get percentile40():Number { return getPercentile(0.40); }
+		/** Get the 50th percentile value */
+		public function get percentile50():Number { return getPercentile(0.50); }
+		/** Get the 50th percentile value */
+		public function get median():Number { return getPercentile(0.50); }
+		/** Get the 60th percentile value */
+		public function get percentile60():Number { return getPercentile(0.60); }
+		/** Get the 750th percentile value */
+		public function get percentile75():Number { return getPercentile(0.75); }
+		/** Get the 80th percentile value */
+		public function get percentile80():Number { return getPercentile(0.80); }
+		/** Get the 90th percentile value */
+		public function get percentile90():Number { return getPercentile(0.90); }
+		/** Get the 95th percentile value */
+		public function get percentile95():Number { return getPercentile(0.95); }
+		/** Get the 99th percentile value */
+		public function get percentile99():Number { return getPercentile(0.99); }
 
 		
 		/** The minimum value (for date/time values). */
