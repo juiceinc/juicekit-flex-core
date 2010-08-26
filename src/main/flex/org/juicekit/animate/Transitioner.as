@@ -266,35 +266,48 @@ public class Transitioner extends Parallel implements IValueProxy {
         return _immediate ? o : _proxy.init(o);
     }
 
-    /**
-     * Sets property values for a target object. This method has the same
-     * effect as setting a property on the object returned by the
-     * <code>$</code> method.
-     *
-     * <p>If the transitioner is in immediate mode, the property name will
-     * be parsed and the value set at the end of the property chain. If
-     * the transitioner is not in immediate mode, the property name and
-     * values will simply be added to a Tween. If no Tween is associated
-     * with the input object, a new one will be created.</p>
-     *
-     * @param o the target object
-     * @param name the property name string
-     * @param value the property value to set
-     */
-    public function setValue(o:Object, name:String, value:*):void {
-        if (_immediate) {
-            // set the object property
-            Property.$(name).setValue(o, value);
-        } else if (optimize && getValue(o, name) == value) {
-            // do nothing, optimize the call away...
-        } else if (optimize && o is DisplayObject && !getValue(o, "visible")) {
-            Property.$(name).setValue(o, value);
-        } else {
-            // add to a tween
-            _(o).values[name] = value;
-        }
-    }
-
+	/**
+	 * Sets property values for a target object. This method has the same
+	 * effect as setting a property on the object returned by the
+	 * <code>$</code> method.
+	 *
+	 * <p>If the transitioner is in immediate mode, the property name will
+	 * be parsed and the value set at the end of the property chain. If
+	 * the transitioner is not in immediate mode, the property name and
+	 * values will simply be added to a Tween. If no Tween is associated
+	 * with the input object, a new one will be created.</p>
+	 *
+	 * @param o the target object
+	 * @param name the property name string
+	 * @param value the property value to set
+	 */
+	public function setValue(o:Object, name:String, value:*):void {
+		if (_immediate) {
+			// set the object property
+			Property.$(name).setValue(o, value);
+		} else if (optimize && getValue(o, name) == value) {
+			// do nothing, optimize the call away...
+		} else if (optimize && o is DisplayObject && !getValue(o, "visible")) {
+			Property.$(name).setValue(o, value);
+		} else {
+			// add to a tween
+			_(o).values[name] = value;
+		}
+	}
+	
+	/**
+	 * Sets property values for a target object. This is a convenience
+	 * method for performing multiple <code>setValue</code>.
+	 *
+	 * @param o the target object
+	 * @param values an object containing property names and values to set
+	 */
+	public function setValues(o:Object, values:Object):void {
+		for (var k:String in values) {
+			setValue(o, k, values[k]);
+		}
+	}
+	
     /**
      * Retrieves property values for a target object. This method has the
      * same effect as accessing a property using the object returned by the
