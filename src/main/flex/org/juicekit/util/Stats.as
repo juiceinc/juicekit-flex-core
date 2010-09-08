@@ -32,6 +32,7 @@
 
 package org.juicekit.util
 {
+	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	
 	
@@ -69,16 +70,19 @@ package org.juicekit.util
 		private var _stdev:Number = 0;
 		
 		/** The data type of the collection, one of NUMBER, DATE, or OBJECT. */
+        [Bindable(event='statsCalculated')]
 		public function get dataType():int {
 			return _type;
 		}
 		
 		/** A sorted array of all the values. */
+        [Bindable(event='statsCalculated')]
 		public function get values():Array {
 			return _elm;
 		}
 		
 		/** A sorted array of all unique values in the collection. */
+        [Bindable(event='statsCalculated')]
 		public function get distinctValues():Array {
 			// get array with only unique items
 			var dists:Array = [];
@@ -94,51 +98,61 @@ package org.juicekit.util
 		}
 		
 		/** The minimum value (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get minimum():Number {
 			return _min;
 		}
 		
 		/** The maximum value (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get maximum():Number {
 			return _max;
 		}
 		
 		/** The 0.025 percentile value (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get percentileLow():Number {
 			return _percentileLow;
 		}
 		
 		/** The 0.975 percentile value (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get percentileHigh():Number {
 			return _percentileHigh;
 		}
 		
 		/** The sum of all the values (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get sum():Number {
 			return _sum;
 		}
 		
 		/** The average of all the values (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get average():Number {
 			return _sum / _num;
 		}
 		
 		/** The standard deviation of all the values (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get stddev():Number {
 			return _stdev;
 		}
 		
 		/** The standard error of all the values (for numerical data). */
+        [Bindable(event='statsCalculated')]
 		public function get stderr():Number {
 			return stddev / Math.sqrt(_num);
 		}
 		
 		/** The total number of values. */
+        [Bindable(event='statsCalculated')]
 		public function get count():Number {
 			return _num;
 		}
 		
 		/** The total number of distinct values. */
+        [Bindable(event='statsCalculated')]
 		public function get distinct():Number {
 			return _distinct;
 		}
@@ -162,51 +176,69 @@ package org.juicekit.util
 		}
 
 		/** Get the 1st percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile1():Number { return getPercentile(0.01); }
 		/** Get the 5th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile5():Number { return getPercentile(0.05); }
 		/** Get the 10th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile10():Number { return getPercentile(0.10); }
 		/** Get the 20th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile20():Number { return getPercentile(0.20); }
 		/** Get the 25th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile25():Number { return getPercentile(0.25); }
 		/** Get the 40th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile40():Number { return getPercentile(0.40); }
 		/** Get the 50th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile50():Number { return getPercentile(0.50); }
 		/** Get the 50th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get median():Number { return getPercentile(0.50); }
 		/** Get the 60th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile60():Number { return getPercentile(0.60); }
 		/** Get the 750th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile75():Number { return getPercentile(0.75); }
 		/** Get the 80th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile80():Number { return getPercentile(0.80); }
 		/** Get the 90th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile90():Number { return getPercentile(0.90); }
 		/** Get the 95th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile95():Number { return getPercentile(0.95); }
 		/** Get the 99th percentile value */
+        [Bindable(event='statsCalculated')]
 		public function get percentile99():Number { return getPercentile(0.99); }
 
 		
 		/** The minimum value (for date/time values). */
+        [Bindable(event='statsCalculated')]
 		public function get minDate():Date {
 			return _minObject as Date;
 		}
 		
 		/** The maximum value (for date/time values). */
+        [Bindable(event='statsCalculated')]
 		public function get maxDate():Date {
 			return _maxObject as Date;
 		}
 		
 		/** The minimum value (for arbitrary objects). */
+        [Bindable(event='statsCalculated')]
 		public function get minObject():Object {
 			return _minObject;
 		}
 		
 		/** The maximum value (for arbitrary objects). */
+        [Bindable(event='statsCalculated')]
 		public function get maxObject():Object {
 			return _maxObject;
 		}
@@ -308,6 +340,7 @@ package org.juicekit.util
 				_minObject = _elm[0];
 				_maxObject = _elm[N];
 			}
+            dispatchEvent(new Event('statsCalculated'));
 		}
 		
 		/**
