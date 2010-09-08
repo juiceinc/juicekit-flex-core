@@ -1,11 +1,13 @@
 package org.juicekit.util {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.utils.getTimer;
 	
 	import mx.events.FlexEvent;
+	import mx.utils.ObjectUtil;
 	
 	import org.juicekit.util.Maths;
 	import org.juicekit.util.Strings;
@@ -73,6 +75,8 @@ package org.juicekit.util {
 			this.addEventListener(Event.ADDED_TO_STAGE, function():void {
 				addEventListener(Event.ENTER_FRAME, tick);				
 			});
+			this.addEventListener(MouseEvent.ROLL_OVER, showStats);
+			this.addEventListener(MouseEvent.ROLL_OUT, hideStats);
 		}
 		
 		
@@ -93,9 +97,26 @@ package org.juicekit.util {
 		 * Stom timing performance
 		 */
 		public function stop():void {
+			var stats:Stats = new Stats(data);
+			
+			this.toolTip = Strings.format("Min: {0}ms\nMax: {1}ms\nMedian: {2}ms", stats.minimum, stats.maximum, stats.median);
 			running = false;
 		}
 		
+
+		private var savedText:String = '';
+		
+		private function showStats(e:Event):void {
+			savedText = text;
+			if (data.length > 0) {
+				var stats:Stats = new Stats(data);
+				text = Strings.format("min: {0}ms / max: {1}ms / median: {2}ms", stats.minimum, stats.maximum, stats.median);
+			}
+		}
+		
+		private function hideStats(e:Event):void {
+			text = savedText;
+		}
 		
 		private var _x:Number = 0;
 		
