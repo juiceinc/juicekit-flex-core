@@ -53,7 +53,6 @@
                             http://fpdownload.adobe.com/pub/{extension}/flex/${flex.sdk.version}/{artifactId}_{version}.{extension}
                         </url>
                     </rslUrls>
-                    <flashPlayerCommand>/Applications/Flash Player.app/Contents/MacOS/Flash Player</flashPlayerCommand>
                 </configuration>
                 <dependencies>
                     <dependency>
