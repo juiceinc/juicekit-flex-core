@@ -1,0 +1,117 @@
+---
+layout: release
+title: 'JuiceKit 1.2.1 Release Notes'
+version: 1.2.1
+categories: ['release']
+# must include release version
+# do not include a title element in the contents of the text
+---
+Author: Sal Uryasev, chris.gemignani@juiceanalytics.com<br>
+<h2>Backwards-incompatible changes</h2>
+JuiceKit has a policy of API stability. That means that if you develop against JuiceKit 1.X, your code will continue to work against newly released 1.X versions of JuiceKit. <br>
+<br>
+JuiceKit 2.0 does not guarantee backward compatibility. In general, our concept of API stability is well represented by the Django project. Here's their take on versioning and API stability (http://docs.djangoproject.com/en/dev/misc/api-stability/#misc-api-stability).<br>
+<br>
+Due to bug-fixes, we may need to change the behavior of JuiceKit in a backward-incompatible way. We will note those changes here.<br>
+<h2>Features deprecated in JuiceKit 1.2</h2>
+Deprecated features will be removed in JuiceKit 2.0. You should remove references to this code as soon as possible.<br>
+<h4>ColorPalette</h4>
+Setting minimum and maximum colors in the TreeMapControl has been deprecated in favor of ColorPalettes. If you are currently using:<br>
+<br>
+&nbsp; &lt;controls:TreeMapControl id="treemap"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minEncodingColor="0xff0000",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxEncodingColor="0x0000ff"/&gt;<br>
+<br>
+to create a  ColorPalette to create the same effect, use:<br>
+<br>
+&nbsp; &lt;controls:TreeMapControl id="treemap" <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; palette="{new ColorPalette.diverging(0xff0000, 0x0000ff)}"/&gt;<br>
+<br>
+<h4>TreeMapControl Labels</h4>
+The current TreeMapControl label effect "glow" will be replaced by the effect "blackwhite".<br>
+<br>
+<h2>What's new in JuiceKit 1.2RC1<br>
+</h2>
+<h3>Repository location</h3>
+<div>The location for the JuiceKit repository has changed to http://github.com/chrisgemignani/juicekit/tree/. <i>Note: This may change in the future. </i>We will offer downloadable compiled swcs of JuiceKit releases soon.</div>
+<h3>Documentation</h3>
+<div>JuiceKit is currently comprised of two parts. A patched prefuse Flare library.</div>
+<h3>TreeMapControl</h3>
+<h4>Color Scale changes</h4>
+<div>Options have been added to control whether the ColorEncoder regenerates the color scale when you zoom into our out of a treemap with the TreeMapZoomControl. The default is the color scale will <b>not change</b>. The previous behavior of JuiceKit was that the color scale would change when you zoomed. This is hardly ever desirable. Color scaling in the treemap can be controlled with new options&nbsp;<font size="2"><font class="Apple-style-span" face="'Courier New'">freezeColorsOnDataChange</font></font></div>
+and&nbsp;<font class="Apple-style-span" face="'Courier New'"><font size="2">freezeColorsOnDataRootChange</font><font class="Apple-style-span" face="Arial, sans-serif"><font size="2">.</font></font></font>
+<h4>TreeMap appearance</h4>
+<div>The visuals of the TreeMapControl have been significantly improved by replacing the way Flare draws treemap blocks with a way that is more consistent with Flash. Flare BLOCK shapes has been drawn as a filled rectangle with a outline representing the desired treemap borders by depth. We have created a new Shapes.TREEMAPBLOCK shape that draws an outer rectangle with the line color and an inner rectangle with the node fill color. The Flare TreemapLayout has been updated to position these blocks more accurately. These changes allow:</div>
+<div><br>
+</div>
+<div>
+<ul><li>Border widths of less than 1 pixel are possible--they look great, try them out.</li>
+<li>The border hierarchy is much more clear.&nbsp;</li>
+<li>Borders no longer overlap--previously borders could overlap each other based on a seemingly random z-axis ordering of nodes.</li></ul>
+<div><br>
+</div>
+<div>A new option <font class="Apple-style-span" face="'Courier New'">styleFromDataRoot</font> has been added. This maintains the border styles as you drill into the treemap with TreeMapZoomControl. This is off by default, but you may want to try it out.</div>
+<div>
+<h4>Label styles</h4>
+<div>A new option <font class="Apple-style-span" face="'Courier New'">labelColorStrategy</font> has been added. This changes how the labels are colored to contrast with the background. The current strategy is "glow". Two additional strategies are available; "blackwhite" and "none". None applies no visual effect to the labels. blackwhite adaptively chooses black or white based on the color of the underlying node. blackwhite will be the default strategy going forward when we reach JuiceKit 2.0.</div>
+<div><br>
+</div>
+<div>The default label position has been changed to top left from centered.</div>
+<h4>Color Palettes</h4>
+</div>
+<div>
+<div>Color palettes are now the preferred way of assigning colors to a treemap. &nbsp;</div>
+<div><br>
+</div>
+<div>Use the CSS style <font class="Apple-style-span" face="'Courier New'">palette</font> and supply the name of any Color Palette in org.juicekit.flare.util.palette.ColorPalette. For more, see Colors and ColorPalettes below. <i>Note: w</i><i>e may change the palette from a CSS style to a property.</i></div>
+<h4>Extensibility</h4>
+<div>The TreeMapControl can be supplied an array of Flare Operators as <font class="Apple-style-span" face="'Courier New'">extraOperators</font>. These operators are added after the core treemap operators that handle layout, coloring and sizing. This allows you to do things like dynamically highlight search terms.</div>
+<div><br>
+</div>
+<div>An optional array of Flash filters can be applied to nodes with <font class="Apple-style-span" face="'Courier New'">nodeFlashFilters</font>. This can be used to change the default appearance of treemap nodes.</div>
+<div>
+<div>
+<h3>GraphUtil&nbsp;</h3>
+We have included the GraphUtil library supplied in the Flare demos in org.juicekit.util.data.GraphUtil. This contains a number of utility functions for generating graph structures. We have added a new static function to create tree data structures suitable for use in TreeMapControl from Arrays of objects. This function is called GraphUtil.treeMap.</div>
+<div><br>
+</div>
+<div>GraphUtil.treeMap makes it easy to generate simple treemaps but it also allows you to use the SQL-ish Flare Query syntax to generate new calculated variables (including weighted averages) across all levels of the tree.</div>
+<div></div>
+</div>
+<h3>Colors and ColorPalettes</h3>
+</div>
+<div>A new utility library for manipulating colors is available at<font class="Apple-style-span" face="'Courier New'"> org.juicekit.flare.util.Colors</font>. This derives from and considerably extends the <font class="Apple-style-span" face="'Courier New'">flare.util.Colors</font> library. Static functions exist for manipulating the brightness, saturation, and hue of colors as well as generating complements and analogs of colors. Significant inspiration and algorithms were drawn from the excellent NodeBox Colors library (http://nodebox.net/code/index.php/Colors), although JuiceKit is not yet close to duplicating all of NodeBox's extensive color options.</div>
+<div><br>
+</div>
+<div>A similar extension was performed on <font class="Apple-style-span" face="'Courier New'">org.juicekit.flare.util.palette.ColorPalette</font>. This derives from and considerably extends <font class="Apple-style-span" face="'Courier New'">flare.util.palette.ColorPalette</font> and is used as a replacement for Flare ColorPalette. The big news here is that we have included over 30 professionally designed color palettes that Cynthia Brewer has been kind enough to Apache license. You can see some examples at http://colorbrewer2.org/.&nbsp;</div>
+<div><br>
+</div>
+<div>ColorPalettes can be manipulated using all the methods of the Colors library. For instance, you can take a ColorPalette and darken and desaturate it.</div>
+<div><br>
+</div>
+<div>We will have some browsable demos at juicekit.org soon that show all the ColorPalettes and the manipulation options.<br>
+<h3>Charts</h3>
+A new charting package is taking shape under org.juicekit.charts. Currently it includes BarChart and ColumnChart. These charts package elements of Flare charting that we believe will offer better visualization defaults and be easier to configure than Flex's data visualization package.&nbsp;</div>
+<div>
+<h3>Number Formatting</h3>
+<div>We are making heavy use of the flare.util.Strings.format to format numbers in JuiceKit. Going forward, we will extend this syntax to more areas of JuiceKit. It is simply much more powerful and consistent than formatters built into Flex.</div>
+<h3>LiveQuery</h3>
+LiveQuery represents the unholy union of the Flare Query syntax with Flex data binding.&nbsp;</div>
+<div><br>
+</div>
+<div>LiveQuery is an ActionScript class that allows you to specify a Flex ArrayCollection as a dataProvider and a Flare Query. The query will be run against the dataProvider any time the dataProvider changes and the results &nbsp;are available in a result method that is also bindable. This allows you to have live, bindable resummarizations of datasets using a powerful SQL-like syntax. We think this represents the best of what these two packages have to offer. We're starting to use this tool quite a bit in our own consulting work.</div>
+<h3>Thanks</h3>
+<div>We'd like to extend our thanks and gratitude to:</div>
+<div><br>
+</div>
+<div>The Flare team.</div>
+<div>NodeBox color library authors Tom De Smedt and Frederik De Bleser</div>
+<div>Cynthia Brewer&nbsp;</div>
+<h4>Developers</h4>
+<div>Jon Buffington, jon.buffington@juiceanalytics.com</div>
+<div>Chris Gemignani, chris.gemignani@juiceanalytics.com</div>
+<div>Shalini Kataria, shalini.kataria@juiceanalytics.com</div>
+<div>Sal Uryasev, sal.uryasev@juiceanalytics.com</div>
+<br>
+</div>
+<br>

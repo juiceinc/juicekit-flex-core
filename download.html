@@ -1,0 +1,28 @@
+---
+layout: default
+title: JuiceKit
+---
+
+<table>
+    <tr>
+        <td style="width: 450px; padding-right: 20px; vertical-align: top">
+            
+                {% for release in site.categories.releases limit:1 %}
+                  <h2>Most recent release ({{ release.version }})</h2>
+                    <p><a href="/downloads/juicekit_{{ release.version }}.zip">Latest version</a></p>
+                  <li><span>{{ release.version }} -- {{ release.date | date_to_string }}</span> &raquo; <a href="{{ release.url }}">{{ release.title }}</a></li>
+                {% endfor %}
+            
+        </td>
+        
+        <td style="width: 450px; margin-left: 1px solid #cccccc; vertical-align: top">
+                <ul>
+                {% for release in site.categories.releases offset:1 %}                  
+                  <li><span>{{ release.version }} -- {{ release.date | date_to_string }}</span> &raquo; <a href="{{ release.url }}">{{ release.title }}</a></li>
+                {% endfor %}
+                </ul>
+            
+        </td>
+
+    </tr>
+</table>
