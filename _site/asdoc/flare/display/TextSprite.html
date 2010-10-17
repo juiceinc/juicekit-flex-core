@@ -1,0 +1,850 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="TextSprite,flare.display.TextSprite,BITMAP,BOTTOM,CENTER,DEVICE,EMBED,LEFT,MIDDLE,RIGHT,TOP,bitmap,bold,color,font,horizontalAnchor,htmlText,italic,kerning,letterSpacing,size,text,textField,textFormat,textMode,underline,verticalAnchor,applyFormat,render,setMode" name="keywords">
+<title>flare.display.TextSprite</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'TextSprite - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?flare/display/TextSprite.html&amp;flare/display/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;TextSprite</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class TextSprite"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.display</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class TextSprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">TextSprite <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="DirtySprite.html">DirtySprite</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../vis/axis/AxisLabel.html">AxisLabel</a></td>
+</tr>
+</table>
+<p></p>
+  A Sprite representing a text label.
+  TextSprites support multiple forms of text representation: bitmapped
+  text, embedded font text, and standard (device font) text. This allows
+  flexibility in how text labels are handled. For example, by default,
+  text fields using device fonts do not support alpha blending or
+  rotation. By using a TextSprite in BITMAP mode, the text is rendered
+  out to a bitmap which can then be alpha blended.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#angle">angle</a> : Number<div class="summaryTableDescription"> The angle value of this sprite's position in polar co-ordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bitmap">bitmap</a> : Bitmap<div class="summaryTableDescription">[read-only] The bitmap of the text, if in BITMAP mode.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bold">bold</a> : Boolean<div class="summaryTableDescription">
+   The boldness of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#color">color</a> : uint<div class="summaryTableDescription">
+   The color of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#font">font</a> : String<div class="summaryTableDescription">
+   The font to the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#height">height</a> : Number<div class="summaryTableDescription">
+   If dirty, this sprite is re-rendered before returning the height.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#horizontalAnchor">horizontalAnchor</a> : int<div class="summaryTableDescription">
+   The horizontal anchor for the text, one of LEFT, RIGHT, or CENTER.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#htmlText">htmlText</a> : String<div class="summaryTableDescription">
+   The html text shown by this TextSprite.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#italic">italic</a> : Boolean<div class="summaryTableDescription">
+   The italics of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#kerning">kerning</a> : Boolean<div class="summaryTableDescription">
+   The kerning of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#letterSpacing">letterSpacing</a> : int<div class="summaryTableDescription">
+   The letter-spacing of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#origin">origin</a> : Point<div class="summaryTableDescription"> The origin point for polar coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#radius">radius</a> : Number<div class="summaryTableDescription"> The radius value of this sprite's position in polar co-ordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#size">size</a> : Number<div class="summaryTableDescription">
+   The size of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#text">text</a> : String<div class="summaryTableDescription">
+   The text shown by this TextSprite.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#textField">textField</a> : TextField<div class="summaryTableDescription">[read-only] The TextField instance backing this TextSprite.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#textFormat">textFormat</a> : TextFormat<div class="summaryTableDescription"> The default text format for this text sprite.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#textMode">textMode</a> : int<div class="summaryTableDescription">
+   The text rendering mode for this TextSprite, one of BITMAP,
+   DEVICE, or EMBED.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#underline">underline</a> : Boolean<div class="summaryTableDescription">
+   The underline of the text.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#verticalAnchor">verticalAnchor</a> : int<div class="summaryTableDescription">
+   The vertical anchor for the text, one of TOP, BOTTOM, or MIDDLE.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#width">width</a> : Number<div class="summaryTableDescription">
+   If dirty, this sprite is re-rendered before returning the width.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#x">x</a> : Number<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#y">y</a> : Number<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#_angle">_angle</a> : Number<div class="summaryTableDescription"> The angle value of this sprite's position in polar co-ordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#_origin">_origin</a> : Point<div class="summaryTableDescription"> The origin point for polar coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#_radius">_radius</a> : Number<div class="summaryTableDescription"> The radius value of this sprite's position in polar co-ordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#TextSprite()">TextSprite</a>(text:String = null, format:TextFormat = null, mode:int)</div>
+<div class="summaryTableDescription">
+   Creates a new TextSprite instance.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#applyFormat()">applyFormat</a>(fmt:TextFormat):void</div>
+<div class="summaryTableDescription">
+   Applies the settings of the input text format to this sprite's
+   internal text format.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#dirty()">dirty</a>():void</div>
+<div class="summaryTableDescription">
+   Marks this sprite as "dirty" and in need of re-rendering.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#getBounds()">getBounds</a>(targetCoordinateSpace:DisplayObject):Rectangle</div>
+<div class="summaryTableDescription">
+   If dirty, this sprite is re-rendered returning the bounds.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#getRect()">getRect</a>(targetCoordinateSpace:DisplayObject):Rectangle</div>
+<div class="summaryTableDescription">
+   If dirty, this sprite is re-rendered before returning the rect.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#hitTestObject()">hitTestObject</a>(obj:DisplayObject):Boolean</div>
+<div class="summaryTableDescription">
+   If dirty, either sprite is re-rendered before hit-testing.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#hitTestPoint()">hitTestPoint</a>(x:Number, y:Number, shapeFlag:Boolean = false):Boolean</div>
+<div class="summaryTableDescription">
+   If dirty, this sprite is re-rendered before hit-testing.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#render()">render</a>():void</div>
+<div class="summaryTableDescription"> 
+   Draw this sprite's graphical content.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#renderDirty()">renderDirty</a>(evt:Event = null):void</div>
+<div class="summaryTableDescription">[static]
+   Frame render callback that renders all sprites on the dirty list.</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="DirtySprite.html#toString()">toString</a>():String</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setMode()">setMode</a>(mode:int):void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<div class="showHideLinks">
+<div class="hideInheritedConstant" id="hideInheritedConstant">
+<a onclick="javascript:setInheritedVisible(false,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Constants</a>
+</div>
+<div class="showInheritedConstant" id="showInheritedConstant">
+<a onclick="javascript:setInheritedVisible(true,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Constants</a>
+</div>
+</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BITMAP">BITMAP</a> : uint = 2<div class="summaryTableDescription">[static]
+   Constant indicating that text should be rendered into a Bitmap
+   instance.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BOTTOM">BOTTOM</a> : int = 2<div class="summaryTableDescription">[static]
+   Constant for vertically aligning the bottom of the text field
+   to a TextSprite's y-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#CENTER">CENTER</a> : int = 1<div class="summaryTableDescription">[static]
+   Constant for horizontally aligning the center of the text field
+   to a TextSprite's x-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#DEVICE">DEVICE</a> : uint = 0<div class="summaryTableDescription">[static]
+   Constant indicating that text should be rendered using a TextField
+   instance using device fonts.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#EMBED">EMBED</a> : uint = 1<div class="summaryTableDescription">[static]
+   Constant indicating that text should be rendered using a TextField
+   instance using embedded fonts.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LEFT">LEFT</a> : int = 0<div class="summaryTableDescription">[static]
+   Constant for horizontally aligning the left of the text field
+   to a TextSprite's x-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MIDDLE">MIDDLE</a> : int = 1<div class="summaryTableDescription">[static]
+   Constant for vertically aligning the middle of the text field
+   to a TextSprite's y-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RIGHT">RIGHT</a> : int = 2<div class="summaryTableDescription">[static]
+   Constant for horizontally aligning the right of the text field
+   to a TextSprite's x-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#TOP">TOP</a> : int = 0<div class="summaryTableDescription">[static]
+   Constant for vertically aligning the top of the text field
+   to a TextSprite's y-coordinate.</div>
+</td><td class="summaryTableOwnerCol">TextSprite</td>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="DirtySprite.html#ZERO">ZERO</a> : Point<div class="summaryTableDescription">[static] A constant for the point (0,0).</div>
+</td><td class="summaryTableOwnerCol"><a href="DirtySprite.html">DirtySprite</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="bitmap"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bitmap</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bitmap:Bitmap</code>&nbsp;&nbsp;[read-only]<p> The bitmap of the text, if in BITMAP mode. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bitmap():Bitmap</code>
+<br>
+</div>
+<a name="bold"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bold</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bold:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   The boldness of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bold():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bold(value:Boolean):void</code>
+<br>
+</div>
+<a name="color"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">color</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>color:uint</code>&nbsp;&nbsp;[read-write]<p>
+   The color of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get color():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set color(value:uint):void</code>
+<br>
+</div>
+<a name="font"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">font</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>font:String</code>&nbsp;&nbsp;[read-write]<p>
+   The font to the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get font():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set font(value:String):void</code>
+<br>
+</div>
+<a name="horizontalAnchor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">horizontalAnchor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>horizontalAnchor:int</code>&nbsp;&nbsp;[read-write]<p>
+   The horizontal anchor for the text, one of LEFT, RIGHT, or CENTER.
+   This setting determines how the text is horizontally aligned with
+   respect to this TextSprite's (x,y) location.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get horizontalAnchor():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set horizontalAnchor(value:int):void</code>
+<br>
+</div>
+<a name="htmlText"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">htmlText</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>htmlText:String</code>&nbsp;&nbsp;[read-write]<p>
+   The html text shown by this TextSprite.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get htmlText():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set htmlText(value:String):void</code>
+<br>
+</div>
+<a name="italic"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">italic</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>italic:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   The italics of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get italic():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set italic(value:Boolean):void</code>
+<br>
+</div>
+<a name="kerning"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">kerning</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>kerning:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   The kerning of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get kerning():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set kerning(value:Boolean):void</code>
+<br>
+</div>
+<a name="letterSpacing"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">letterSpacing</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>letterSpacing:int</code>&nbsp;&nbsp;[read-write]<p>
+   The letter-spacing of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get letterSpacing():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set letterSpacing(value:int):void</code>
+<br>
+</div>
+<a name="size"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">size</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>size:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The size of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get size():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set size(value:Number):void</code>
+<br>
+</div>
+<a name="text"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">text</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>text:String</code>&nbsp;&nbsp;[read-write]<p>
+   The text shown by this TextSprite.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get text():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set text(value:String):void</code>
+<br>
+</div>
+<a name="textField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">textField</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>textField:TextField</code>&nbsp;&nbsp;[read-only]<p> The TextField instance backing this TextSprite. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get textField():TextField</code>
+<br>
+</div>
+<a name="textFormat"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">textFormat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>textFormat:TextFormat</code>&nbsp;&nbsp;[read-write]<p> The default text format for this text sprite. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get textFormat():TextFormat</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set textFormat(value:TextFormat):void</code>
+<br>
+</div>
+<a name="textMode"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">textMode</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>textMode:int</code>&nbsp;&nbsp;[read-write]<p>
+   The text rendering mode for this TextSprite, one of BITMAP,
+   DEVICE, or EMBED.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get textMode():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set textMode(value:int):void</code>
+<br>
+</div>
+<a name="underline"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">underline</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>underline:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   The underline of the text.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get underline():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set underline(value:Boolean):void</code>
+<br>
+</div>
+<a name="verticalAnchor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">verticalAnchor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>verticalAnchor:int</code>&nbsp;&nbsp;[read-write]<p>
+   The vertical anchor for the text, one of TOP, BOTTOM, or MIDDLE.
+   This setting determines how the text is vertically aligned with
+   respect to this TextSprite's (x,y) location.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get verticalAnchor():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set verticalAnchor(value:int):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="TextSprite()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TextSprite</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function TextSprite(text:String = null, format:TextFormat = null, mode:int)</code><p>
+   Creates a new TextSprite instance.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">text</span>:String</code> (default = <code>null</code>)<code></code> &mdash; the text string for this label
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">format</span>:TextFormat</code> (default = <code>null</code>)<code></code> &mdash; the TextFormat determining font family, size, and style
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">mode</span>:int</code> &mdash; the text rendering mode to use (BITMAP by default)
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="applyFormat()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">applyFormat</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function applyFormat(fmt:TextFormat):void</code><p>
+   Applies the settings of the input text format to this sprite's
+   internal text format. This method makes a shallow copy of the
+   input format, it does not save a reference to it.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">fmt</span>:TextFormat</code> &mdash; the text format to apply
+   </td>
+</tr>
+</table>
+</div>
+<a name="render()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">render</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function render():void</code><p> 
+   Draw this sprite's graphical content. Subclasses should
+   override this method with custom drawing code.
+   </p></div>
+<a name="setMode()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setMode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function setMode(mode:int):void</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mode</span>:int</code></td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="BITMAP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BITMAP</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BITMAP:uint = 2</code><p>
+   Constant indicating that text should be rendered into a Bitmap
+   instance.
+   </p></div>
+<a name="BOTTOM"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BOTTOM</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BOTTOM:int = 2</code><p>
+   Constant for vertically aligning the bottom of the text field
+   to a TextSprite's y-coordinate.
+   </p></div>
+<a name="CENTER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CENTER</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const CENTER:int = 1</code><p>
+   Constant for horizontally aligning the center of the text field
+   to a TextSprite's x-coordinate.
+   </p></div>
+<a name="DEVICE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DEVICE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const DEVICE:uint = 0</code><p>
+   Constant indicating that text should be rendered using a TextField
+   instance using device fonts.
+   </p></div>
+<a name="EMBED"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EMBED</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const EMBED:uint = 1</code><p>
+   Constant indicating that text should be rendered using a TextField
+   instance using embedded fonts. For this mode to work, the fonts
+   used must be embedded in your application SWF file.
+   </p></div>
+<a name="LEFT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LEFT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const LEFT:int = 0</code><p>
+   Constant for horizontally aligning the left of the text field
+   to a TextSprite's x-coordinate.
+   </p></div>
+<a name="MIDDLE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MIDDLE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MIDDLE:int = 1</code><p>
+   Constant for vertically aligning the middle of the text field
+   to a TextSprite's y-coordinate.
+   </p></div>
+<a name="RIGHT"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RIGHT</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RIGHT:int = 2</code><p>
+   Constant for horizontally aligning the right of the text field
+   to a TextSprite's x-coordinate.
+   </p></div>
+<a name="TOP"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TOP</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const TOP:int = 0</code><p>
+   Constant for vertically aligning the top of the text field
+   to a TextSprite's y-coordinate.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

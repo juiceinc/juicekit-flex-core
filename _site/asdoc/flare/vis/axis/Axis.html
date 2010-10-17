@@ -1,0 +1,1346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Axis,flare.vis.axis.Axis,axisScale,fixLabelOverlap,labelOffsetX,labelOffsetY,lineCapX1,lineCapX2,lineCapY1,lineCapY2,lineLengthX,lineLengthY,showLabels,showLines,gridLines,horizontalAnchor,labelAngle,labelColor,labelFormat,labelTextFormat,labelTextMode,labels,lineColor,lineWidth,numLabels,originX,originY,verticalAnchor,x1,x2,y1,y2,X,Y,clearPreviousScale,createGridLine,createLabel,filter,findGridLine,findLabel,fixOverlap,initializeChildren,layout,markRemovals,offsetX,offsetY,positionGridLine,positionLabel,update,updateGridLine,updateGridLines,updateLabel,updateLabels,value" name="keywords">
+<title>flare.vis.axis.Axis</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Axis - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/vis/axis/Axis.html&amp;flare/vis/axis/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Axis</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Axis"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.vis.axis</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Axis</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Axis <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../../scale/IScaleMap.html">IScaleMap</a></td>
+</tr>
+</table>
+<p></p>
+  A metric data axis consisting of axis labels and gridlines.
+  
+  <p>Axis labels can be configured both in terms of text formatting,
+  orientation, and position. Use the <code>labelOffsetX</code> or
+  <code>labelOffsetY</code> property to adjust label positioning. For
+  example, <code>labelOffsetX = -10;</code> places the anchor point for
+  the label ten pixels to the left of the data bounds, whereas
+  <code>labelOffsetX = 10;</code> will place the point 10 pixels to the
+  right of the data bounds. One could simultaneously adjust the
+  <code>horizontalAnchor</code> property to align the labels as desired.
+  </p>
+  
+  <p>Similarly, axis gridlines can also be configured. The
+  <code>lineCapX1</code>, <code>lineCapX2</code>, <code>lineCapY1</code>,
+  and <code>lineCapY2</code> properties determine by how much the
+  grid lines should exceed the data bounds. For example,
+  <code>lineCapX1 = 5</code> causes the grid line to extend an extra
+  5 pixels to the left. Each of these values should be greater than or
+  equal to zero.</p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#axisScale">axisScale</a> : <a href="../../scale/Scale.html">Scale</a>
+<div class="summaryTableDescription"> The Scale used to map values to this axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fixLabelOverlap">fixLabelOverlap</a> : Boolean = true<div class="summaryTableDescription"> Flag indicating if labels should be removed in case of overlap.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#gridLines">gridLines</a> : Sprite<div class="summaryTableDescription">[read-only] Sprite containing the axis grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#horizontalAnchor">horizontalAnchor</a> : int<div class="summaryTableDescription"> The horizontal anchor point for axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelAngle">labelAngle</a> : Number<div class="summaryTableDescription"> The angle (orientation) of axis label text.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelColor">labelColor</a> : uint<div class="summaryTableDescription"> The color of axis label text.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelFormat">labelFormat</a> : String<div class="summaryTableDescription"> String formatting pattern used for axis labels, overwrites any
+    formatting pattern used by the <code>axisScale</code>.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelOffsetX">labelOffsetX</a> : Number = 0<div class="summaryTableDescription"> X-dimension offset value for axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelOffsetY">labelOffsetY</a> : Number = 0<div class="summaryTableDescription"> Y-dimension offset value for axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labels">labels</a> : Sprite<div class="summaryTableDescription">[read-only] Sprite containing the axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelTextFormat">labelTextFormat</a> : TextFormat<div class="summaryTableDescription"> TextFormat (font, size, style) for axis label text.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelTextMode">labelTextMode</a> : int<div class="summaryTableDescription"> The text rendering mode to use for label TextSprites.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineCapX1">lineCapX1</a> : Number = 0<div class="summaryTableDescription"> X offset for axis gridlines at the lower end of the axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineCapX2">lineCapX2</a> : Number = 0<div class="summaryTableDescription"> X offset for axis gridlines at the upper end of the axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineCapY1">lineCapY1</a> : Number = 0<div class="summaryTableDescription"> Y offset for axis gridlines at the lower end of the axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineCapY2">lineCapY2</a> : Number = 0<div class="summaryTableDescription"> Y offset for axis gridlines at the upper end of the axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineColor">lineColor</a> : uint<div class="summaryTableDescription"> The line color of axis grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineLengthX">lineLengthX</a> : Number = 0<div class="summaryTableDescription"> X length of axis gridlines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineLengthY">lineLengthY</a> : Number = 0<div class="summaryTableDescription"> Y length of axis gridlines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineWidth">lineWidth</a> : Number<div class="summaryTableDescription"> The line width of axis grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numLabels">numLabels</a> : int<div class="summaryTableDescription"> The number of labels and gridlines to generate by default.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#originX">originX</a> : Number<div class="summaryTableDescription">[read-only] The x-coordinate of the axis origin.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#originY">originY</a> : Number<div class="summaryTableDescription">[read-only] The y-coordinate of the axis origin.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#showLabels">showLabels</a> : Boolean = true<div class="summaryTableDescription"> Flag indicating if axis labels should be shown.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#showLines">showLines</a> : Boolean = true<div class="summaryTableDescription"> Flag indicating if axis grid lines should be shown.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#verticalAnchor">verticalAnchor</a> : int<div class="summaryTableDescription"> The vertical anchor point for axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x1">x1</a> : Number<div class="summaryTableDescription"> 
+   Returns the x-coordinate corresponding to the lower end of the scale.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#x2">x2</a> : Number<div class="summaryTableDescription"> 
+   Returns the x-coordinate corresponding to the upper end of the scale.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y1">y1</a> : Number<div class="summaryTableDescription"> 
+   Returns the y-coordinate corresponding to the lower end of the scale.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#y2">y2</a> : Number<div class="summaryTableDescription"> 
+   Returns the y-coordinate corresponding to the upper end of the scale.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Axis()">Axis</a>(axisScale:<a href="../../scale/Scale.html">Scale</a> = null)</div>
+<div class="summaryTableDescription">
+   Creates a new Axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearPreviousScale()">clearPreviousScale</a>():void</div>
+<div class="summaryTableDescription">
+   Clears the previous axis scale used, if cached.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#offsetX()">offsetX</a>(value:Object):Number</div>
+<div class="summaryTableDescription">
+   Returns the horizontal offset along the axis for the input value.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#offsetY()">offsetY</a>(value:Object):Number</div>
+<div class="summaryTableDescription">
+   Returns the vertical offset along the axis for the input value.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#update()">update</a>(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):<a href="../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">
+   Updates this axis, performing filtering and layout as needed.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#value()">value</a>(x:Number, y:Number, stayInBounds:Boolean = true):Object</div>
+<div class="summaryTableDescription"> 
+   Returns the scale value corresponding to a given coordinate.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#X()">X</a>(value:Object):Number</div>
+<div class="summaryTableDescription"> 
+         Returns the x-coordinate corresponding to the given scale value
+         </div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Y()">Y</a>(value:Object):Number</div>
+<div class="summaryTableDescription"> 
+         Returns the y-coordinate corresponding to the given scale value
+         </div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createGridLine()">createGridLine</a>(val:Object):<a href="../axis/AxisGridLine.html">AxisGridLine</a>
+</div>
+<div class="summaryTableDescription">
+   Creates a new axis grid line.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createLabel()">createLabel</a>(val:Object):<a href="../axis/AxisLabel.html">AxisLabel</a>
+</div>
+<div class="summaryTableDescription">
+   Creates a new axis label.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#filter()">filter</a>(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</div>
+<div class="summaryTableDescription">
+   Performs filtering, determining which axis labels and grid lines
+   should be visible.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#findGridLine()">findGridLine</a>(val:Object, len:uint):int</div>
+<div class="summaryTableDescription">
+   Returns the index of a grid lines in the line's container sprite
+   for a given data value.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#findLabel()">findLabel</a>(val:Object, len:uint):int</div>
+<div class="summaryTableDescription">
+   Returns the index of a label in the label's container sprite for a
+   given data value.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fixOverlap()">fixOverlap</a>(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</div>
+<div class="summaryTableDescription">
+   Eliminates overlap between labels along an axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initializeChildren()">initializeChildren</a>():void</div>
+<div class="summaryTableDescription">
+   Initializes the child container sprites for labels and grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#layout()">layout</a>(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</div>
+<div class="summaryTableDescription">
+   Performs layout, setting the position of labels and grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#markRemovals()">markRemovals</a>(trans:<a href="../../animate/Transitioner.html">Transitioner</a>, keep:Array, con:Sprite):void</div>
+<div class="summaryTableDescription">
+   Marks all items slated for removal from this axis.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#positionGridLine()">positionGridLine</a>(gline:<a href="AxisGridLine.html">AxisGridLine</a>, scale:<a href="../../scale/Scale.html">Scale</a>):Point</div>
+<div class="summaryTableDescription">
+   Computes the position of an axis grid line.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#positionLabel()">positionLabel</a>(label:<a href="AxisLabel.html">AxisLabel</a>, scale:<a href="../../scale/Scale.html">Scale</a>):Point</div>
+<div class="summaryTableDescription">
+   Computes the position of an axis label.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateGridLine()">updateGridLine</a>(gline:<a href="AxisGridLine.html">AxisGridLine</a>):void</div>
+<div class="summaryTableDescription">
+   Updates an axis grid line's settings
+   </div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateGridLines()">updateGridLines</a>():void</div>
+<div class="summaryTableDescription">
+   Updates all grid lines.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateLabel()">updateLabel</a>(label:<a href="AxisLabel.html">AxisLabel</a>):void</div>
+<div class="summaryTableDescription">
+   Updates an axis label's settings
+   </div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateLabels()">updateLabels</a>():void</div>
+<div class="summaryTableDescription">
+   Updates all axis labels.</div>
+</td><td class="summaryTableOwnerCol">Axis</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="axisScale"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">axisScale</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var axisScale:<a href="../../scale/Scale.html">Scale</a></code><p> The Scale used to map values to this axis. </p></div>
+<a name="fixLabelOverlap"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fixLabelOverlap</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var fixLabelOverlap:Boolean = true</code><p> Flag indicating if labels should be removed in case of overlap. </p></div>
+<a name="gridLines"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">gridLines</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>gridLines:Sprite</code>&nbsp;&nbsp;[read-only]<p> Sprite containing the axis grid lines. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get gridLines():Sprite</code>
+<br>
+</div>
+<a name="horizontalAnchor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">horizontalAnchor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>horizontalAnchor:int</code>&nbsp;&nbsp;[read-write]<p> The horizontal anchor point for axis labels.
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get horizontalAnchor():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set horizontalAnchor(value:int):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flare.display.TextSprite.</div>
+</div>
+<a name="labelAngle"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelAngle</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelAngle:Number</code>&nbsp;&nbsp;[read-write]<p> The angle (orientation) of axis label text. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelAngle():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelAngle(value:Number):void</code>
+<br>
+</div>
+<a name="labelColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelColor:uint</code>&nbsp;&nbsp;[read-write]<p> The color of axis label text. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelColor(value:uint):void</code>
+<br>
+</div>
+<a name="labelFormat"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelFormat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelFormat:String</code>&nbsp;&nbsp;[read-write]<p> String formatting pattern used for axis labels, overwrites any
+    formatting pattern used by the <code>axisScale</code>. If null,
+    the formatting pattern for the <code>axisScale</code> is used. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelFormat():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelFormat(value:String):void</code>
+<br>
+</div>
+<a name="labelOffsetX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelOffsetX</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var labelOffsetX:Number = 0</code><p> X-dimension offset value for axis labels. If negative or zero, this
+    value indicates how much to offset to the left of the data bounds.
+    If positive, the offset is made to the right of the data bounds. </p></div>
+<a name="labelOffsetY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelOffsetY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var labelOffsetY:Number = 0</code><p> Y-dimension offset value for axis labels. If negative or zero, this
+    value indicates how much to offset above the data bounds.
+    If positive, the offset is made beneath the data bounds.</p></div>
+<a name="labels"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labels</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labels:Sprite</code>&nbsp;&nbsp;[read-only]<p> Sprite containing the axis labels. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labels():Sprite</code>
+<br>
+</div>
+<a name="labelTextFormat"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelTextFormat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelTextFormat:TextFormat</code>&nbsp;&nbsp;[read-write]<p> TextFormat (font, size, style) for axis label text. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelTextFormat():TextFormat</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelTextFormat(value:TextFormat):void</code>
+<br>
+</div>
+<a name="labelTextMode"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelTextMode</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelTextMode:int</code>&nbsp;&nbsp;[read-write]<p> The text rendering mode to use for label TextSprites.
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelTextMode():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelTextMode(value:int):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flare.display.TextSprite.</div>
+</div>
+<a name="lineCapX1"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineCapX1</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineCapX1:Number = 0</code><p> X offset for axis gridlines at the lower end of the axis. </p></div>
+<a name="lineCapX2"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineCapX2</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineCapX2:Number = 0</code><p> X offset for axis gridlines at the upper end of the axis. </p></div>
+<a name="lineCapY1"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineCapY1</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineCapY1:Number = 0</code><p> Y offset for axis gridlines at the lower end of the axis. </p></div>
+<a name="lineCapY2"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineCapY2</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineCapY2:Number = 0</code><p> Y offset for axis gridlines at the upper end of the axis. </p></div>
+<a name="lineColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>lineColor:uint</code>&nbsp;&nbsp;[read-write]<p> The line color of axis grid lines. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get lineColor():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set lineColor(value:uint):void</code>
+<br>
+</div>
+<a name="lineLengthX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineLengthX</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineLengthX:Number = 0</code><p> X length of axis gridlines. </p></div>
+<a name="lineLengthY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineLengthY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineLengthY:Number = 0</code><p> Y length of axis gridlines. </p></div>
+<a name="lineWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>lineWidth:Number</code>&nbsp;&nbsp;[read-write]<p> The line width of axis grid lines. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get lineWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set lineWidth(value:Number):void</code>
+<br>
+</div>
+<a name="numLabels"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numLabels</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numLabels:int</code>&nbsp;&nbsp;[read-write]<p> The number of labels and gridlines to generate by default. If this
+    number is zero or less (default -1), the number of labels will be
+    automatically determined from the current scale and size. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numLabels():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set numLabels(value:int):void</code>
+<br>
+</div>
+<a name="originX"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">originX</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>originX:Number</code>&nbsp;&nbsp;[read-only]<p> The x-coordinate of the axis origin. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get originX():Number</code>
+<br>
+</div>
+<a name="originY"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">originY</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>originY:Number</code>&nbsp;&nbsp;[read-only]<p> The y-coordinate of the axis origin. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get originY():Number</code>
+<br>
+</div>
+<a name="showLabels"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showLabels</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var showLabels:Boolean = true</code><p> Flag indicating if axis labels should be shown. </p></div>
+<a name="showLines"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showLines</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var showLines:Boolean = true</code><p> Flag indicating if axis grid lines should be shown. </p></div>
+<a name="verticalAnchor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">verticalAnchor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>verticalAnchor:int</code>&nbsp;&nbsp;[read-write]<p> The vertical anchor point for axis labels.
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get verticalAnchor():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set verticalAnchor(value:int):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flare.display.TextSprite.</div>
+</div>
+<a name="x1"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x1</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x1:Number</code>&nbsp;&nbsp;[read-write]<p> 
+   Returns the x-coordinate corresponding to the lower end of the scale.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x1():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set x1(value:Number):void</code>
+<br>
+</div>
+<a name="x2"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">x2</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>x2:Number</code>&nbsp;&nbsp;[read-write]<p> 
+   Returns the x-coordinate corresponding to the upper end of the scale.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get x2():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set x2(value:Number):void</code>
+<br>
+</div>
+<a name="y1"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y1</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y1:Number</code>&nbsp;&nbsp;[read-write]<p> 
+   Returns the y-coordinate corresponding to the lower end of the scale.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y1():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set y1(value:Number):void</code>
+<br>
+</div>
+<a name="y2"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">y2</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>y2:Number</code>&nbsp;&nbsp;[read-write]<p> 
+   Returns the y-coordinate corresponding to the upper end of the scale.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get y2():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set y2(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Axis()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Axis</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Axis(axisScale:<a href="../../scale/Scale.html">Scale</a> = null)</code><p>
+   Creates a new Axis.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">axisScale</span>:<a href="../../scale/Scale.html">Scale</a></code> (default = <code>null</code>)<code></code> &mdash; the axis scale to use. If null, a linear scale
+    is assumed.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clearPreviousScale()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearPreviousScale</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clearPreviousScale():void</code><p>
+   Clears the previous axis scale used, if cached.
+   </p></div>
+<a name="createGridLine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createGridLine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function createGridLine(val:Object):<a href="../axis/AxisGridLine.html">AxisGridLine</a></code><p>
+   Creates a new axis grid line.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">val</span>:Object</code> &mdash; the value to create the grid lines for
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../axis/AxisGridLine.html">AxisGridLine</a></code> &mdash; 
+                        an AxisGridLine
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="createLabel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createLabel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function createLabel(val:Object):<a href="../axis/AxisLabel.html">AxisLabel</a></code><p>
+   Creates a new axis label.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">val</span>:Object</code> &mdash; the value to create the label for
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../axis/AxisLabel.html">AxisLabel</a></code> &mdash; 
+                        an AxisLabel
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="filter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function filter(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</code><p>
+   Performs filtering, determining which axis labels and grid lines
+   should be visible.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">trans</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; a Transitioner for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<a name="findGridLine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">findGridLine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function findGridLine(val:Object, len:uint):int</code><p>
+   Returns the index of a grid lines in the line's container sprite
+   for a given data value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">val</span>:Object</code> &mdash; the data value to find
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">len</span>:uint</code> &mdash; the number of grid lines to check
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash; the index of a grid line with matching value, or -1 if no
+    grid line was found
+   </td>
+</tr>
+</table>
+</div>
+<a name="findLabel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">findLabel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function findLabel(val:Object, len:uint):int</code><p>
+   Returns the index of a label in the label's container sprite for a
+   given data value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">val</span>:Object</code> &mdash; the data value to find
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">len</span>:uint</code> &mdash; the number of labels to check
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash; the index of a label with matching value, or -1 if no label
+    was found
+   </td>
+</tr>
+</table>
+</div>
+<a name="fixOverlap()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fixOverlap</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function fixOverlap(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</code><p>
+   Eliminates overlap between labels along an axis. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">trans</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; a transitioner, potentially storing label positions
+   </td>
+</tr>
+</table>
+</div>
+<a name="initializeChildren()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initializeChildren</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function initializeChildren():void</code><p>
+   Initializes the child container sprites for labels and grid lines.
+   </p></div>
+<a name="layout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">layout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function layout(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):void</code><p>
+   Performs layout, setting the position of labels and grid lines.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">trans</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; a Transitioner for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<a name="markRemovals()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">markRemovals</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function markRemovals(trans:<a href="../../animate/Transitioner.html">Transitioner</a>, keep:Array, con:Sprite):void</code><p>
+   Marks all items slated for removal from this axis.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">trans</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; a Transitioner for collecting value updates.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">keep</span>:Array</code> &mdash; a Boolean array indicating which items to keep
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">con</span>:Sprite</code> &mdash; a container Sprite whose contents should be marked
+    for removal
+   </td>
+</tr>
+</table>
+</div>
+<a name="offsetX()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">offsetX</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function offsetX(value:Object):Number</code><p>
+   Returns the horizontal offset along the axis for the input value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Object</code> &mdash; an input data value
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the horizontal offset along the axis corresponding to the
+    input value. This is the x-position minus <code>x1</code>.
+   </td>
+</tr>
+</table>
+</div>
+<a name="offsetY()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">offsetY</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function offsetY(value:Object):Number</code><p>
+   Returns the vertical offset along the axis for the input value.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Object</code> &mdash; an input data value
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the vertical offset along the axis corresponding to the
+    input value. This is the y-position minus <code>y1</code>.
+   </td>
+</tr>
+</table>
+</div>
+<a name="positionGridLine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">positionGridLine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function positionGridLine(gline:<a href="AxisGridLine.html">AxisGridLine</a>, scale:<a href="../../scale/Scale.html">Scale</a>):Point</code><p>
+   Computes the position of an axis grid line.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">gline</span>:<a href="AxisGridLine.html">AxisGridLine</a></code> &mdash; the axis grid line to layout
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">scale</span>:<a href="../../scale/Scale.html">Scale</a></code> &mdash; the scale used to map values to the axis
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Point</code> &mdash; a Point with x,y coordinates for the axis grid line
+   </td>
+</tr>
+</table>
+</div>
+<a name="positionLabel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">positionLabel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function positionLabel(label:<a href="AxisLabel.html">AxisLabel</a>, scale:<a href="../../scale/Scale.html">Scale</a>):Point</code><p>
+   Computes the position of an axis label.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">label</span>:<a href="AxisLabel.html">AxisLabel</a></code> &mdash; the axis label to layout
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">scale</span>:<a href="../../scale/Scale.html">Scale</a></code> &mdash; the scale used to map values to the axis
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Point</code> &mdash; a Point with x,y coordinates for the axis label
+   </td>
+</tr>
+</table>
+</div>
+<a name="update()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">update</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function update(trans:<a href="../../animate/Transitioner.html">Transitioner</a>):<a href="../../animate/Transitioner.html">Transitioner</a></code><p>
+   Updates this axis, performing filtering and layout as needed.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">trans</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; a Transitioner for collecting value updates
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; 
+                        the input transitioner.
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="updateGridLine()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateGridLine</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateGridLine(gline:<a href="AxisGridLine.html">AxisGridLine</a>):void</code><p>
+   Updates an axis grid line's settings
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">gline</span>:<a href="AxisGridLine.html">AxisGridLine</a></code> &mdash; the grid line to update
+   </td>
+</tr>
+</table>
+</div>
+<a name="updateGridLines()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateGridLines</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateGridLines():void</code><p>
+   Updates all grid lines.
+   </p></div>
+<a name="updateLabel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateLabel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateLabel(label:<a href="AxisLabel.html">AxisLabel</a>):void</code><p>
+   Updates an axis label's settings
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">label</span>:<a href="AxisLabel.html">AxisLabel</a></code> &mdash; the label to update
+   </td>
+</tr>
+</table>
+</div>
+<a name="updateLabels()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateLabels</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function updateLabels():void</code><p>
+   Updates all axis labels.
+   </p></div>
+<a name="value()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">value</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function value(x:Number, y:Number, stayInBounds:Boolean = true):Object</code><p> 
+   Returns the scale value corresponding to a given coordinate.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; the x-coordinate
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; the y-coordinate
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">stayInBounds</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; if true, x,y values outside the current layout
+   bounds will be snapped to the bounds. If false, the value lookup
+   will attempt to extrapolate beyond the scale bounds. This value
+   is true be default.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; the scale value corresponding to the given coordinate.
+   </td>
+</tr>
+</table>
+</div>
+<a name="X()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">X</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function X(value:Object):Number</code><p> 
+         Returns the x-coordinate corresponding to the given scale value
+         </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Object</code> &mdash; the scale value to lookup
+         </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the x-coordinate at which that scale value is placed
+         </td>
+</tr>
+</table>
+</div>
+<a name="Y()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Y</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Y(value:Object):Number</code><p> 
+         Returns the y-coordinate corresponding to the given scale value
+         </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Object</code> &mdash; the scale value to lookup
+         </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the y-coordinate at which that scale value is placed
+         </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

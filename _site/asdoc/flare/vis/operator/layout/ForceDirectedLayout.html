@@ -1,0 +1,624 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="ForceDirectedLayout,flare.vis.operator.layout.ForceDirectedLayout,damping,mass,restLength,tension,defaultParticleMass,defaultSpringLength,defaultSpringTension,enforceBounds,iterations,simulation,ticksPerIteration,init,layout,update" name="keywords">
+<title>flare.vis.operator.layout.ForceDirectedLayout</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ForceDirectedLayout - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?flare/vis/operator/layout/ForceDirectedLayout.html&amp;flare/vis/operator/layout/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ForceDirectedLayout</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ForceDirectedLayout"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.vis.operator.layout</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ForceDirectedLayout</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ForceDirectedLayout <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="Layout.html">Layout</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="../Operator.html">Operator</a></td>
+</tr>
+</table>
+<p></p>
+  Layout that places nodes based on a physics simulation of
+  interacting forces. By default, nodes repel each other, edges act as
+  springs, and drag forces (similar to air resistance) are applied. This
+  algorithm can be run for multiple iterations for a run-once layout
+  computation or repeatedly run in an animated fashion for a dynamic and
+  interactive layout (set <code>Visualization.continuousUpdates = true
+  </code>).
+  
+  <p>The running time of this layout algorithm is the greater of O(N log N)
+  and O(E), where N is the number of nodes and E the number of edges.
+  The addition of custom forces to the simulation may affect this.</p>
+  
+  <p>The force directed layout is implemented using the physics simulator
+  provided by the <code>flare.physics</code> package. The
+  <code>Simulation</code> used to drive this layout can be set explicitly,
+  allowing any number of custom force directed layouts to be created
+  through the selection of <code>IForce</code> modules. Each node in the
+  layout is mapped to a <code>Particle</code> instance and each edge
+  to a <code>Spring</code> in the simulation. Once the simulation has been
+  initialized, you can retrieve these instances through the
+  <code>node.props.particle</code> and <code>edge.props.spring</code>
+  properties, respectively.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../physics/package-detail.html" target="">flare.physics</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#damping">damping</a> : Function<div class="summaryTableDescription">
+   Function for assigning damping constant values to springs.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultParticleMass">defaultParticleMass</a> : Number<div class="summaryTableDescription"> The default mass value for node/particles.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultSpringLength">defaultSpringLength</a> : Number<div class="summaryTableDescription"> The default spring rest length for edge/springs.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultSpringTension">defaultSpringTension</a> : Number<div class="summaryTableDescription"> The default spring tension for edge/springs.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription"> Indicates if the operator is enabled or disabled.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#enforceBounds">enforceBounds</a> : Boolean<div class="summaryTableDescription"> Flag indicating if the layout bounds should be enforced.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#iterations">iterations</a> : int<div class="summaryTableDescription"> The number of iterations to run the simulation per invocation
+    (default is 1, expecting continuous updates).</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#layoutAnchor">layoutAnchor</a> : Point<div class="summaryTableDescription"> The layout anchor, used by some layout instances to place an
+    initial item or determine a focal point.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#layoutBounds">layoutBounds</a> : Rectangle<div class="summaryTableDescription"> The layout bounds for the layout.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#layoutRoot">layoutRoot</a> : <a href="../../data/DataSprite.html">DataSprite</a>
+<div class="summaryTableDescription"> The layout root, the root node for tree layouts.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#layoutType">layoutType</a> : String = "null"<div class="summaryTableDescription"> The type of layout and axes.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mass">mass</a> : Function<div class="summaryTableDescription">
+   Function for assigning mass values to particles.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#parameters">parameters</a> : Object<div class="summaryTableDescription"> 
+   Sets parameter values for this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#restLength">restLength</a> : Function<div class="summaryTableDescription">
+   Function for assigning rest length values to springs.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#simulation">simulation</a> : <a href="../../../physics/Simulation.html">Simulation</a>
+<div class="summaryTableDescription">[read-only] The physics simulation driving this layout.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tension">tension</a> : Function<div class="summaryTableDescription">
+   Function for assigning tension values to springs.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ticksPerIteration">ticksPerIteration</a> : int<div class="summaryTableDescription"> The number of time ticks to advance the simulation on each
+    iteration (default is 1).</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#visualization">visualization</a> : <a href="../../../vis/Visualization.html">Visualization</a>
+<div class="summaryTableDescription"> The visualization processed by this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#_anchor">_anchor</a> : Point<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#_setAnchor">_setAnchor</a> : Boolean = false<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#_t">_t</a> : <a href="../../../animate/Transitioner.html">Transitioner</a> = null<div class="summaryTableDescription"> A transitioner for storing value updates.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#xyAxes">xyAxes</a> : <a href="../../axis/CartesianAxes.html">CartesianAxes</a>
+<div class="summaryTableDescription">
+   Returns the visualization's axes as a CartesianAxes instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ForceDirectedLayout()">ForceDirectedLayout</a>(enforceBounds:Boolean = false, iterations:int = 1, sim:<a href="../../../physics/Simulation.html">Simulation</a> = null)</div>
+<div class="summaryTableDescription">
+   Creates a new ForceDirectedLayout.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../Operator.html#applyParameters()">applyParameters</a>(op:<a href="../../operator/IOperator.html">IOperator</a>, params:Object):void</div>
+<div class="summaryTableDescription">[static]
+   Static method that applies parameter settings to an operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#clearEdgePoints()">clearEdgePoints</a>():void</div>
+<div class="summaryTableDescription">
+   Strips all EdgeSprites in a visualization of any control points.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#hideAxes()">hideAxes</a>(t:<a href="../../../animate/Transitioner.html">Transitioner</a> = null):<a href="../../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">
+   Hides the axes.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#operate()">operate</a>(t:<a href="../../../animate/Transitioner.html">Transitioner</a> = null):void</div>
+<div class="summaryTableDescription"> 
+   Performs an operation over the contents of a visualization.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../Operator.html#setup()">setup</a>():void</div>
+<div class="summaryTableDescription">
+   Setup method invoked whenever this operator's visualization
+   property is set.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#showAxes()">showAxes</a>(t:<a href="../../../animate/Transitioner.html">Transitioner</a> = null):<a href="../../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">
+   Reveals the axes.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#straightenEdges()">straightenEdges</a>(list:<a href="../../data/DataList.html">DataList</a>, t:<a href="../../../animate/Transitioner.html">Transitioner</a>):<a href="../../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Updates all edges to be straight lines.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#autoAnchor()">autoAnchor</a>():void</div>
+<div class="summaryTableDescription"> Automatically-generate an anchor point.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>():void</div>
+<div class="summaryTableDescription">
+   Initializes the Simulation for this ForceDirectedLayout
+   </div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#layout()">layout</a>():void</div>
+<div class="summaryTableDescription"> 
+   Calculates the spatial layout of visualized items.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="Layout.html#minAngle()">minAngle</a>(a1:Number, a2:Number):Number</div>
+<div class="summaryTableDescription">
+   Returns an angle value that minimizes the angular distance
+   between a reference angle and a target angle.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#update()">update</a>(d:<a href="../../data/DataSprite.html">DataSprite</a>):void</div>
+<div class="summaryTableDescription">
+   Transfer the physics simulation results to an item's layout.</div>
+</td><td class="summaryTableOwnerCol">ForceDirectedLayout</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<div class="showHideLinks">
+<div class="hideInheritedConstant" id="hideInheritedConstant">
+<a onclick="javascript:setInheritedVisible(false,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Constants</a>
+</div>
+<div class="showInheritedConstant" id="showInheritedConstant">
+<a onclick="javascript:setInheritedVisible(true,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Constants</a>
+</div>
+</div>
+<table id="summaryTableConstant" class="summaryTable hideInheritedConstant" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#CARTESIAN">CARTESIAN</a> : String = "cartesian"<div class="summaryTableDescription">[static] Constant indicating Cartesian (x, y) coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="Layout.html#POLAR">POLAR</a> : String = "polar"<div class="summaryTableDescription">[static] Constant indicating polar (radius, angle) coordinates.</div>
+</td><td class="summaryTableOwnerCol"><a href="Layout.html">Layout</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="damping"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">damping</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var damping:Function</code><p>
+   Function for assigning damping constant values to springs. By
+   default, this simply uses the spring's computed tension value
+   divided by 10. This function can be replaced to perform custom
+   damping assignment.
+   </p></div>
+<a name="defaultParticleMass"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultParticleMass</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultParticleMass:Number</code>&nbsp;&nbsp;[read-write]<p> The default mass value for node/particles. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultParticleMass():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultParticleMass(value:Number):void</code>
+<br>
+</div>
+<a name="defaultSpringLength"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultSpringLength</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultSpringLength:Number</code>&nbsp;&nbsp;[read-write]<p> The default spring rest length for edge/springs. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultSpringLength():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultSpringLength(value:Number):void</code>
+<br>
+</div>
+<a name="defaultSpringTension"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultSpringTension</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultSpringTension:Number</code>&nbsp;&nbsp;[read-write]<p> The default spring tension for edge/springs. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultSpringTension():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultSpringTension(value:Number):void</code>
+<br>
+</div>
+<a name="enforceBounds"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enforceBounds</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>enforceBounds:Boolean</code>&nbsp;&nbsp;[read-write]<p> Flag indicating if the layout bounds should be enforced. 
+    If true, the layoutBounds will limit node placement. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get enforceBounds():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set enforceBounds(value:Boolean):void</code>
+<br>
+</div>
+<a name="iterations"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">iterations</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>iterations:int</code>&nbsp;&nbsp;[read-write]<p> The number of iterations to run the simulation per invocation
+    (default is 1, expecting continuous updates). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get iterations():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set iterations(value:int):void</code>
+<br>
+</div>
+<a name="mass"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mass</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var mass:Function</code><p>
+   Function for assigning mass values to particles. By default, this
+   simply returns the default mass value. This function can be replaced
+   to perform custom mass assignment.
+   </p></div>
+<a name="restLength"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">restLength</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var restLength:Function</code><p>
+   Function for assigning rest length values to springs. By default,
+   this simply returns the default rest length value. This function can
+   be replaced to perform custom rest length assignment.
+   </p></div>
+<a name="simulation"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">simulation</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>simulation:<a href="../../../physics/Simulation.html">Simulation</a></code>&nbsp;&nbsp;[read-only]<p> The physics simulation driving this layout. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get simulation():<a href="../../../physics/Simulation.html">Simulation</a></code>
+<br>
+</div>
+<a name="tension"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tension</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var tension:Function</code><p>
+   Function for assigning tension values to springs. By default, this
+   method computes spring tension adaptively, based on the connectivity
+   of the attached particles, to create more stable layouts. More
+   specifically, the tension is computed as the default tension value
+   divided by the square root of the maximum degree of the attached
+   particles. This function can be replaced to perform custom tension
+   assignment.
+   </p></div>
+<a name="ticksPerIteration"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ticksPerIteration</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>ticksPerIteration:int</code>&nbsp;&nbsp;[read-write]<p> The number of time ticks to advance the simulation on each
+    iteration (default is 1). </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get ticksPerIteration():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set ticksPerIteration(value:int):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ForceDirectedLayout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ForceDirectedLayout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ForceDirectedLayout(enforceBounds:Boolean = false, iterations:int = 1, sim:<a href="../../../physics/Simulation.html">Simulation</a> = null)</code><p>
+   Creates a new ForceDirectedLayout.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">enforceBounds</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; the number of iterations to run the simulation
+    per invocation
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">iterations</span>:int</code> (default = <code>1</code>)<code></code> &mdash; the physics simulation to use for the layout. If null
+    (the default), default simulation settings will be used
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sim</span>:<a href="../../../physics/Simulation.html">Simulation</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function init():void</code><p>
+   Initializes the Simulation for this ForceDirectedLayout
+   </p></div>
+<a name="layout()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">layout</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected override function layout():void</code><p> 
+   Calculates the spatial layout of visualized items. Layout operators
+   override this method with their layout implementations.
+   </p></div>
+<a name="update()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">update</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function update(d:<a href="../../data/DataSprite.html">DataSprite</a>):void</code><p>
+   Transfer the physics simulation results to an item's layout.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="../../data/DataSprite.html">DataSprite</a></code> &mdash; a DataSprite
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

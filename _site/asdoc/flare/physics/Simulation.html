@@ -1,0 +1,778 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="Simulation,flare.physics.Simulation,_ppool,_spool,objectPoolLimit,bounds,dragForce,gravityForce,nbodyForce,particles,springForce,springs,addForce,addParticle,addSpring,eval,getForceAt,getParticle,getSpring,reclaimParticle,reclaimSpring,removeParticle,removeSpring,tick" name="keywords">
+<title>flare.physics.Simulation</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Simulation - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?flare/physics/Simulation.html&amp;flare/physics/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Simulation</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Simulation"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.physics</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Simulation</td>
+</tr>
+</table>
+<p></p>
+  A physical simulation involving particles, springs, and forces.
+  Useful for simulating a range of physical effects or layouts.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bounds">bounds</a> : Rectangle<div class="summaryTableDescription"> Sets a bounding box for particles in this simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dragForce">dragForce</a> : <a href="../physics/DragForce.html">DragForce</a>
+<div class="summaryTableDescription">[read-only] The default drag force for this simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#gravityForce">gravityForce</a> : <a href="../physics/GravityForce.html">GravityForce</a>
+<div class="summaryTableDescription">[read-only] The default gravity force for this simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#nbodyForce">nbodyForce</a> : <a href="../physics/NBodyForce.html">NBodyForce</a>
+<div class="summaryTableDescription">[read-only] The default n-body force for this simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#objectPoolLimit">objectPoolLimit</a> : int = 5000<div class="summaryTableDescription">[static] The maximum number of items stored in a simulation object pool.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#particles">particles</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns the particle list.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#springForce">springForce</a> : <a href="../physics/SpringForce.html">SpringForce</a>
+<div class="summaryTableDescription">[read-only] The default spring force for this simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#springs">springs</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns the spring list.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_ppool">_ppool</a> : Array<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_spool">_spool</a> : Array<div class="summaryTableDescription">[static]</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Simulation()">Simulation</a>(gx:Number = 0, gy:Number = 0, drag:Number = 0.1, attraction:Number = -5)</div>
+<div class="summaryTableDescription">
+   Creates a new physics simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addForce()">addForce</a>(force:<a href="IForce.html">IForce</a>):void</div>
+<div class="summaryTableDescription">
+   Adds a custom force to the force simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addParticle()">addParticle</a>(mass:Number, x:Number, y:Number):<a href="../physics/Particle.html">Particle</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a new particle to the simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addSpring()">addSpring</a>(p1:<a href="Particle.html">Particle</a>, p2:<a href="Particle.html">Particle</a>, restLength:Number, tension:Number, damping:Number):<a href="../physics/Spring.html">Spring</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a spring to the simulation
+   </div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#eval()">eval</a>():void</div>
+<div class="summaryTableDescription">
+   Evaluates the set of forces in the simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getForceAt()">getForceAt</a>(idx:int):<a href="../physics/IForce.html">IForce</a>
+</div>
+<div class="summaryTableDescription">
+   Returns the force at the given index.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeParticle()">removeParticle</a>(idx:uint):Boolean</div>
+<div class="summaryTableDescription">
+   Removes a particle from the simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeSpring()">removeSpring</a>(idx:uint):Boolean</div>
+<div class="summaryTableDescription">
+   Removes a spring from the simulation.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#tick()">tick</a>(dt:Number = 1):void</div>
+<div class="summaryTableDescription">
+   Advance the simulation for the specified time interval.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getParticle()">getParticle</a>(mass:Number, x:Number, y:Number):<a href="../physics/Particle.html">Particle</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Returns a particle instance, pulling a recycled particle from the
+   object pool if available.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getSpring()">getSpring</a>(p1:<a href="Particle.html">Particle</a>, p2:<a href="Particle.html">Particle</a>, restLength:Number, tension:Number, damping:Number):<a href="../physics/Spring.html">Spring</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Returns a spring instance, pulling a recycled spring from the
+   object pool if available.</div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reclaimParticle()">reclaimParticle</a>(p:<a href="Particle.html">Particle</a>):void</div>
+<div class="summaryTableDescription">[static]
+   Reclaims a particle, adding it to the object pool for recycling
+   </div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reclaimSpring()">reclaimSpring</a>(s:<a href="Spring.html">Spring</a>):void</div>
+<div class="summaryTableDescription">[static]
+   Reclaims a spring, adding it to the object pool for recycling
+   </div>
+</td><td class="summaryTableOwnerCol">Simulation</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="bounds"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bounds</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bounds:Rectangle</code>&nbsp;&nbsp;[read-write]<p> Sets a bounding box for particles in this simulation.
+    Null (the default) indicates no boundaries. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bounds():Rectangle</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bounds(value:Rectangle):void</code>
+<br>
+</div>
+<a name="dragForce"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dragForce</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>dragForce:<a href="../physics/DragForce.html">DragForce</a></code>&nbsp;&nbsp;[read-only]<p> The default drag force for this simulation. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get dragForce():<a href="../physics/DragForce.html">DragForce</a></code>
+<br>
+</div>
+<a name="gravityForce"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">gravityForce</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>gravityForce:<a href="../physics/GravityForce.html">GravityForce</a></code>&nbsp;&nbsp;[read-only]<p> The default gravity force for this simulation. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get gravityForce():<a href="../physics/GravityForce.html">GravityForce</a></code>
+<br>
+</div>
+<a name="nbodyForce"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">nbodyForce</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>nbodyForce:<a href="../physics/NBodyForce.html">NBodyForce</a></code>&nbsp;&nbsp;[read-only]<p> The default n-body force for this simulation. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get nbodyForce():<a href="../physics/NBodyForce.html">NBodyForce</a></code>
+<br>
+</div>
+<a name="objectPoolLimit"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">objectPoolLimit</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var objectPoolLimit:int = 5000</code><p> The maximum number of items stored in a simulation object pool. </p></div>
+<a name="particles"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">particles</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>particles:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the particle list. This is the same array instance backing
+   the simulation, so edit the array with caution.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get particles():Array</code>
+<br>
+</div>
+<a name="_ppool"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_ppool</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var _ppool:Array</code>
+</div>
+<a name="_spool"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_spool</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static var _spool:Array</code>
+</div>
+<a name="springForce"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">springForce</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>springForce:<a href="../physics/SpringForce.html">SpringForce</a></code>&nbsp;&nbsp;[read-only]<p> The default spring force for this simulation. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get springForce():<a href="../physics/SpringForce.html">SpringForce</a></code>
+<br>
+</div>
+<a name="springs"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">springs</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>springs:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns the spring list. This is the same array instance backing
+   the simulation, so edit the array with caution.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get springs():Array</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Simulation()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Simulation</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Simulation(gx:Number = 0, gy:Number = 0, drag:Number = 0.1, attraction:Number = -5)</code><p>
+   Creates a new physics simulation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">gx</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; the gravitational acceleration along the x dimension
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">gy</span>:Number</code> (default = <code>0</code>)<code></code> &mdash; the gravitational acceleration along the y dimension
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">drag</span>:Number</code> (default = <code>0.1</code>)<code></code> &mdash; the default drag (viscosity) co-efficient
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">attraction</span>:Number</code> (default = <code>-5</code>)<code></code> &mdash; the gravitational attraction (or repulsion, for
+    negative values) between particles.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addForce()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addForce</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addForce(force:<a href="IForce.html">IForce</a>):void</code><p>
+   Adds a custom force to the force simulation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">force</span>:<a href="IForce.html">IForce</a></code> &mdash; the force to add
+   </td>
+</tr>
+</table>
+</div>
+<a name="addParticle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addParticle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addParticle(mass:Number, x:Number, y:Number):<a href="../physics/Particle.html">Particle</a></code><p>
+   Adds a new particle to the simulation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mass</span>:Number</code> &mdash; the mass (charge) of the particle
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; the particle's starting x position
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; the particle's starting y position
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../physics/Particle.html">Particle</a></code> &mdash; 
+                        the added particle
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="addSpring()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addSpring</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addSpring(p1:<a href="Particle.html">Particle</a>, p2:<a href="Particle.html">Particle</a>, restLength:Number, tension:Number, damping:Number):<a href="../physics/Spring.html">Spring</a></code><p>
+   Adds a spring to the simulation
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p1</span>:<a href="Particle.html">Particle</a></code> &mdash; the first particle attached to the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p2</span>:<a href="Particle.html">Particle</a></code> &mdash; the second particle attached to the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">restLength</span>:Number</code> &mdash; the rest length of the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tension</span>:Number</code> &mdash; the tension of the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">damping</span>:Number</code> &mdash; the damping (friction) co-efficient of the spring
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../physics/Spring.html">Spring</a></code> &mdash; 
+                        the added spring
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="eval()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">eval</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function eval():void</code><p>
+   Evaluates the set of forces in the simulation.
+   </p></div>
+<a name="getForceAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getForceAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getForceAt(idx:int):<a href="../physics/IForce.html">IForce</a></code><p>
+   Returns the force at the given index.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">idx</span>:int</code> &mdash; the index of the force to look up
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../physics/IForce.html">IForce</a></code> &mdash; 
+                        the force at the specified index
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getParticle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getParticle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function getParticle(mass:Number, x:Number, y:Number):<a href="../physics/Particle.html">Particle</a></code><p>
+   Returns a particle instance, pulling a recycled particle from the
+   object pool if available.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">mass</span>:Number</code> &mdash; the mass (charge) of the particle
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">x</span>:Number</code> &mdash; the particle's starting x position
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">y</span>:Number</code> &mdash; the particle's starting y position
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../physics/Particle.html">Particle</a></code> &mdash; 
+                        a particle instance
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="getSpring()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getSpring</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function getSpring(p1:<a href="Particle.html">Particle</a>, p2:<a href="Particle.html">Particle</a>, restLength:Number, tension:Number, damping:Number):<a href="../physics/Spring.html">Spring</a></code><p>
+   Returns a spring instance, pulling a recycled spring from the
+   object pool if available.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p1</span>:<a href="Particle.html">Particle</a></code> &mdash; the first particle attached to the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p2</span>:<a href="Particle.html">Particle</a></code> &mdash; the second particle attached to the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">restLength</span>:Number</code> &mdash; the rest length of the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">tension</span>:Number</code> &mdash; the tension of the spring
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">damping</span>:Number</code> &mdash; the damping (friction) co-efficient of the spring
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../physics/Spring.html">Spring</a></code> &mdash; 
+                        a spring instance
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="reclaimParticle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reclaimParticle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function reclaimParticle(p:<a href="Particle.html">Particle</a>):void</code><p>
+   Reclaims a particle, adding it to the object pool for recycling
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p</span>:<a href="Particle.html">Particle</a></code> &mdash; the particle to reclaim
+   </td>
+</tr>
+</table>
+</div>
+<a name="reclaimSpring()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reclaimSpring</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected static function reclaimSpring(s:<a href="Spring.html">Spring</a>):void</code><p>
+   Reclaims a spring, adding it to the object pool for recycling
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">s</span>:<a href="Spring.html">Spring</a></code> &mdash; the spring to reclaim
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeParticle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeParticle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeParticle(idx:uint):Boolean</code><p>
+   Removes a particle from the simulation. Any springs attached to
+   the particle will also be removed.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">idx</span>:uint</code> &mdash; the index of the particle in the particle list
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if removed, false otherwise.
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeSpring()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeSpring</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeSpring(idx:uint):Boolean</code><p>
+   Removes a spring from the simulation.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">idx</span>:uint</code> &mdash; the index of the spring in the spring list
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if removed, false otherwise
+   </td>
+</tr>
+</table>
+</div>
+<a name="tick()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tick</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function tick(dt:Number = 1):void</code><p>
+   Advance the simulation for the specified time interval.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">dt</span>:Number</code> (default = <code>1</code>)<code></code> &mdash; the time interval to step the simulation (default 1)
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

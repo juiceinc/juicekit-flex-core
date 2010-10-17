@@ -1,0 +1,1201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="DataList,flare.vis.data.DataList,length,list,name,sort,add,addEventListener,adjacencyMatrix,applyDefaults,clear,clearDefaults,clearStats,contains,dispatchEvent,distanceMatrix,hasEventListener,remove,removeAt,removeDefault,removeEventListener,setDefault,setDefaults,setLater,setProperties,setProperty,sortBy,stats,toDataArray,toDataArrayCollection,visit,willTrigger" name="keywords">
+<title>flare.vis.data.DataList</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'DataList - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/vis/data/DataList.html&amp;flare/vis/data/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;DataList</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class DataList"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.vis.data</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class DataList</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">DataList <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.utils.Proxy</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td>flash.events.IEventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  Data structure for a collection of <code>DataSprite</code> instances.
+  Items contained in this list can be accessed using array notation
+  (<code>[]</code>), iterated over using the <code>for each</code>
+  construct, or can be processed by passing a visitor function to the
+  <code>visit</code> method.
+  
+  <p>Data lists provide methods for sorting elements both in a one-time
+  and persistent fashion, for setting the properties of contained
+  items in a batch-processing style (see the <code>setProperty</code>
+  and <code>setProperties</code> methods), and for computing and
+  caching summary statistics of data variables (see the
+  <code>stats</code> method.</p>
+  
+  <p>Data lists also support listeners for add and remove events. These
+  events are fired <em>before</em> the add or remove is executed. These
+  data events can be canceled by calling <code>preventDefault()</code>
+  on the <code>DataEvent</code> object, thereby preventing the add or
+  remove from being performed. Using this mechanism, clients can add
+  custom constraints on the contents of a data list by adding new
+  listeners that monitor add and remove events and cancel them when
+  desired.</p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#length">length</a> : int<div class="summaryTableDescription">[read-only] The number of items contained in this list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#list">list</a> : Array<div class="summaryTableDescription">[read-only] The underlying array storing the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">[read-only] The name of this data list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sort">sort</a> : <a href="../../util/Sort.html">Sort</a>
+<div class="summaryTableDescription"> A standing sort criteria for items in the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#DataList()">DataList</a>(name:String)</div>
+<div class="summaryTableDescription">
+   Creates a new DataList instance.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#add()">add</a>(d:<a href="DataSprite.html">DataSprite</a>):<a href="../data/DataSprite.html">DataSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Add a DataSprite to the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#adjacencyMatrix()">adjacencyMatrix</a>(w:Function = null, mat:<a href="../../util/math/IMatrix.html">IMatrix</a> = null):<a href="../../util/math/IMatrix.html">IMatrix</a>
+</div>
+<div class="summaryTableDescription">
+   Creates a new adjacency matrix representing the connections between
+   items in this DataList.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#applyDefaults()">applyDefaults</a>(o:Object):void</div>
+<div class="summaryTableDescription">
+   Applies the default values to an object.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clear()">clear</a>():Boolean</div>
+<div class="summaryTableDescription">
+   Remove all DataSprites from this list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearDefaults()">clearDefaults</a>():void</div>
+<div class="summaryTableDescription">
+   Clears all default value settings for this list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearStats()">clearStats</a>(field:String):void</div>
+<div class="summaryTableDescription">
+   Clears any cached stats for the given field.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#contains()">contains</a>(d:<a href="DataSprite.html">DataSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Indicates if the given object is contained in this list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(event:Event):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#distanceMatrix()">distanceMatrix</a>(d:Function, mat:<a href="../../util/math/IMatrix.html">IMatrix</a> = null):<a href="../../util/math/IMatrix.html">IMatrix</a>
+</div>
+<div class="summaryTableDescription">
+   Creates a new distance matrix based on a distance function.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasEventListener()">hasEventListener</a>(type:String):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#remove()">remove</a>(d:<a href="DataSprite.html">DataSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Remove a data sprite from the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeAt()">removeAt</a>(idx:int):<a href="../data/DataSprite.html">DataSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Remove a DataSprite from the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeDefault()">removeDefault</a>(name:String):void</div>
+<div class="summaryTableDescription">
+   Removes a default value for newly created items.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setDefault()">setDefault</a>(name:String, value:*):void</div>
+<div class="summaryTableDescription">
+   Sets a default property value for newly created items.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setDefaults()">setDefaults</a>(values:Object):void</div>
+<div class="summaryTableDescription">
+   Sets default values for newly created items.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setLater()">setLater</a>(vals:Object, filter:* = null):Function</div>
+<div class="summaryTableDescription">
+   A function generator that can be used to set properties
+   at a later time.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setProperties()">setProperties</a>(vals:Object, t:* = null, filter:* = null):<a href="../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">
+   Sets property values on all sprites in a given group.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setProperty()">setProperty</a>(name:String, value:*, t:* = null, filter:* = null):<a href="../../animate/Transitioner.html">Transitioner</a>
+</div>
+<div class="summaryTableDescription">
+   Sets a property value on all items in the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#sortBy()">sortBy</a>(... args):void</div>
+<div class="summaryTableDescription">
+   Sort DataSprites according to their properties.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stats()">stats</a>(field:String):<a href="../../util/Stats.html">Stats</a>
+</div>
+<div class="summaryTableDescription">
+   Computes and caches statistics for a data field.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toDataArray()">toDataArray</a>():Array</div>
+<div class="summaryTableDescription">
+   Returns an array of data objects for each item in this data list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toDataArrayCollection()">toDataArrayCollection</a>():ArrayCollection</div>
+<div class="summaryTableDescription">
+   Returns an ArrayCollection of data objects for each item in this 
+   data list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#visit()">visit</a>(visitor:Function, filter:Boolean = null, reverse:* = false):Boolean</div>
+<div class="summaryTableDescription">
+   Iterates over the contents of the list, invoking a visitor function
+   on each element of the list.</div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#willTrigger()">willTrigger</a>(type:String):Boolean</div>
+<div class="summaryTableDescription"> </div>
+</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:add">add</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">&nbsp;</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:remove">remove</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">&nbsp;</td><td class="summaryTableOwnerCol">DataList</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="length"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">length</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>length:int</code>&nbsp;&nbsp;[read-only]<p> The number of items contained in this list. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get length():int</code>
+<br>
+</div>
+<a name="list"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">list</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>list:Array</code>&nbsp;&nbsp;[read-only]<p> The underlying array storing the list. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get list():Array</code>
+<br>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>name:String</code>&nbsp;&nbsp;[read-only]<p> The name of this data list. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get name():String</code>
+<br>
+</div>
+<a name="sort"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sort</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>sort:<a href="../../util/Sort.html">Sort</a></code>&nbsp;&nbsp;[read-write]<p> A standing sort criteria for items in the list. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sort():<a href="../../util/Sort.html">Sort</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set sort(value:<a href="../../util/Sort.html">Sort</a>):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="DataList()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">DataList</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function DataList(name:String)</code><p>
+   Creates a new DataList instance. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; indicates if this list should be publicly editable.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="add()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">add</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function add(d:<a href="DataSprite.html">DataSprite</a>):<a href="../data/DataSprite.html">DataSprite</a></code><p>
+   Add a DataSprite to the list.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="DataSprite.html">DataSprite</a></code> &mdash; the DataSprite to add
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/DataSprite.html">DataSprite</a></code> &mdash; 
+                        the added DataSprite, or null if the add failed
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">priority</span>:int</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="adjacencyMatrix()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">adjacencyMatrix</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function adjacencyMatrix(w:Function = null, mat:<a href="../../util/math/IMatrix.html">IMatrix</a> = null):<a href="../../util/math/IMatrix.html">IMatrix</a></code><p>
+   Creates a new adjacency matrix representing the connections between
+   items in this DataList. This method should only be applied when the
+   items contained in this list are <code>NodeSprite</code> instances.
+   The method takes an optional function to compute edge weights.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">w</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; the edge weight function. This function should take an
+    <code>EdgeSprite</code> as input and return a <code>Number</code>.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">mat</span>:<a href="../../util/math/IMatrix.html">IMatrix</a></code> (default = <code>null</code>)<code></code> &mdash; a matrix instance in which to store the adjacency matrix
+    values. If this value is null, a new <code>DenseMatrix</code> will
+    be constructed.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../util/math/IMatrix.html">IMatrix</a></code> &mdash; 
+                        the adjacency matrix
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="applyDefaults()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">applyDefaults</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function applyDefaults(o:Object):void</code><p>
+   Applies the default values to an object.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">o</span>:Object</code> &mdash; the object on which to set the default values
+   </td>
+</tr>
+</table>
+</div>
+<a name="clear()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clear</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clear():Boolean</code><p>
+   Remove all DataSprites from this list.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="clearDefaults()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearDefaults</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clearDefaults():void</code><p>
+   Clears all default value settings for this list.
+   </p></div>
+<a name="clearStats()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearStats</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clearStats(field:String):void</code><p>
+   Clears any cached stats for the given field. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">field</span>:String</code> &mdash; the data field to clear the stats for.
+   </td>
+</tr>
+</table>
+</div>
+<a name="contains()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">contains</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function contains(d:<a href="DataSprite.html">DataSprite</a>):Boolean</code><p>
+   Indicates if the given object is contained in this list.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="DataSprite.html">DataSprite</a></code> &mdash; the object to check for containment
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if the list contains the object, false otherwise.
+   </td>
+</tr>
+</table>
+</div>
+<a name="dispatchEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function dispatchEvent(event:Event):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">event</span>:Event</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="distanceMatrix()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">distanceMatrix</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function distanceMatrix(d:Function, mat:<a href="../../util/math/IMatrix.html">IMatrix</a> = null):<a href="../../util/math/IMatrix.html">IMatrix</a></code><p>
+   Creates a new distance matrix based on a distance function.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:Function</code> &mdash; the distance function. This should take two
+    <code>DataSprite</code> instances and return a <code>Number</code>
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">mat</span>:<a href="../../util/math/IMatrix.html">IMatrix</a></code> (default = <code>null</code>)<code></code> &mdash; a matrix instance in which to store the adjacency matrix
+    values. If this value is null, a new <code>DenseMatrix</code> will
+    be constructed.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../util/math/IMatrix.html">IMatrix</a></code> &mdash; 
+                        the distance matrix
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="hasEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hasEventListener(type:String):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="remove()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">remove</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function remove(d:<a href="DataSprite.html">DataSprite</a>):Boolean</code><p>
+   Remove a data sprite from the list.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="DataSprite.html">DataSprite</a></code> &mdash; the DataSprite to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if the object was found and removed, false otherwise
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeAt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeAt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeAt(idx:int):<a href="../data/DataSprite.html">DataSprite</a></code><p>
+   Remove a DataSprite from the list.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">idx</span>:int</code> &mdash; the index of the DataSprite to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/DataSprite.html">DataSprite</a></code> &mdash; 
+                        the removed DataSprite
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="removeDefault()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeDefault</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeDefault(name:String):void</code><p>
+   Removes a default value for newly created items.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the property
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="setDefault()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setDefault</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setDefault(name:String, value:*):void</code><p>
+   Sets a default property value for newly created items.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the property
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:*</code> &mdash; the value of the property
+   </td>
+</tr>
+</table>
+</div>
+<a name="setDefaults()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setDefaults</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setDefaults(values:Object):void</code><p>
+   Sets default values for newly created items.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">values</span>:Object</code> &mdash; the default properties to set
+   </td>
+</tr>
+</table>
+</div>
+<a name="setLater()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setLater</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setLater(vals:Object, filter:* = null):Function</code><p>
+   A function generator that can be used to set properties
+   at a later time. This method returns a function that can
+   accept a <code>Transitioner</code> as its sole argument and then
+   executes the <code>setProperties</code> method. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vals</span>:Object</code> &mdash; an object containing the properties and values to set.
+    This is treated the same as the <code>setProperties</code> method.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:*</code> (default = <code>null</code>)<code></code> &mdash; an optional Boolean-valued filter function for
+    limiting which items are visited
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Function</code> &mdash; a function that accepts a <code>Transitioner</code> argument
+    and runs <code>setProperties</code>.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setProperties(vals:Object, t:* = null, filter:* = null):<a href="../../animate/Transitioner.html">Transitioner</a></code><p>
+   Sets property values on all sprites in a given group. The values
+   within the <code>vals</code> argument can take a number of forms:
+   <ul>
+    <li>If a value is a <code>Function</code>, it will be evaluated
+        for each element and the result will be used as the property
+        value for that element.</li>
+    <li>If a value is an <code>IEvaluable</code> instance, such as
+        <code>flare.util.Property</code> or
+        <code>flare.query.Expression</code>, it will be evaluated for
+        each element and the result will be used as the property value
+        for that element.</li>
+    <li>In all other cases, a property value will be treated as a
+        literal and assigned for all elements.</li>
+   </ul>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vals</span>:Object</code> &mdash; an object containing the properties and values to set.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:*</code> (default = <code>null</code>)<code></code> &mdash; a transitioner or time span for updating object values. If
+    the input is a transitioner, it will be used to store the updated
+    values. If the input is a number, a new Transitioner with duration
+    set to the input value will be used. The input is null by default,
+    in which case object values are updated immediately.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:*</code> (default = <code>null</code>)<code></code> &mdash; an optional Boolean-valued filter function for
+    limiting which items are visited
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; 
+                        the transitioner used to update the values
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="setProperty()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setProperty(name:String, value:*, t:* = null, filter:* = null):<a href="../../animate/Transitioner.html">Transitioner</a></code><p>
+   Sets a property value on all items in the list. The value can take
+    a number of forms:
+   <ul>
+    <li>If the value is a <code>Function</code>, it will be evaluated
+        for each element and the result will be used as the property
+        value for that element.</li>
+    <li>If the value is an <code>IEvaluable</code> instance, such as
+        <code>flare.util.Property</code> or
+        <code>flare.query.Expression</code>, it will be evaluated for
+        each element and the result will be used as the property value
+        for that element.</li>
+    <li>In all other cases, the property value will be treated as a
+        literal and assigned for all elements.</li>
+   </ul>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the property
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:*</code> &mdash; the value of the property
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:*</code> (default = <code>null</code>)<code></code> &mdash; a transitioner or time span for updating object values. If
+    the input is a transitioner, it will be used to store the updated
+    values. If the input is a number, a new Transitioner with duration
+    set to the input value will be used. The input is null by default,
+    in which case object values are updated immediately.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:*</code> (default = <code>null</code>)<code></code> &mdash; an optional Boolean-valued filter function for
+    limiting which items are visited
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../animate/Transitioner.html">Transitioner</a></code> &mdash; 
+                        the transitioner used to update the values
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="sortBy()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sortBy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function sortBy(... args):void</code><p>
+   Sort DataSprites according to their properties. This method performs
+   a one-time sorting. To establish a consistent sort order robust over
+   the addition of new items, use the <code>sort</code> property.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">args</span></code> &mdash; the sort arguments.
+    If a String is provided, the data will be sorted in ascending order
+     according to the data field named by the string.
+    If an Array is provided, the data will be sorted according to the
+     fields in the array. In addition, field names can optionally
+     be followed by a boolean value. If true, the data is sorted in
+     ascending order (the default). If false, the data is sorted in
+     descending order.
+   </td>
+</tr>
+</table>
+</div>
+<a name="stats()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stats</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stats(field:String):<a href="../../util/Stats.html">Stats</a></code><p>
+   Computes and caches statistics for a data field. The resulting
+   <code>Stats</code> object is cached, so that later access does not
+   require any re-calculation. The cache of statistics objects may be
+   cleared, however, if changes to the data set are made.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">field</span>:String</code> &mdash; the property name
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../../util/Stats.html">Stats</a></code> &mdash; 
+                        a <code>Stats</code> object with the computed statistics
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="toDataArray()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toDataArray</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function toDataArray():Array</code><p>
+   Returns an array of data objects for each item in this data list.
+   Data objects are retrieved from the "data" property for each item.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code> &mdash; an array of data objects for items in this data list
+   </td>
+</tr>
+</table>
+</div>
+<a name="toDataArrayCollection()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toDataArrayCollection</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function toDataArrayCollection():ArrayCollection</code><p>
+   Returns an ArrayCollection of data objects for each item in this 
+   data list. This ArrayCollection will trigger a binding event when 
+   items are added or removed from the list or if the list is cleared.
+   
+   Data objects are retrieved from the "data" property for each item.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ArrayCollection</code> &mdash; an ArrayCollection of data objects for items in this data list
+   </td>
+</tr>
+</table>
+</div>
+<a name="visit()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">visit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function visit(visitor:Function, filter:Boolean = null, reverse:* = false):Boolean</code><p>
+   Iterates over the contents of the list, invoking a visitor function
+   on each element of the list. If the visitor function returns a
+   Boolean true value, the iteration will stop with an early exit.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">visitor</span>:Function</code> &mdash; the visitor function to be invoked on each item
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:Boolean</code> (default = <code>null</code>)<code></code> &mdash; an optional boolean-valued function indicating which
+    items should be visited
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">reverse</span>:*</code> (default = <code>false</code>)<code></code> &mdash; optional flag indicating if the list should be
+    visited in reverse order
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if the visitation was interrupted with an early exit
+   </td>
+</tr>
+</table>
+</div>
+<a name="willTrigger()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">willTrigger</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function willTrigger(type:String):Boolean</code><p> </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:add"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">add</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/DataEvent.html"><code>flare.vis.events.DataEvent</code></a>
+<br>
+<p></p>
+</div>
+<a name="event:remove"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">remove</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/DataEvent.html"><code>flare.vis.events.DataEvent</code></a>
+<br>
+<p></p>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

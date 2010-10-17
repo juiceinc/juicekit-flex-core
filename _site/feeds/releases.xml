@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>JuiceKit Releases</title>
+ <link href="http://juicekit.org/feeds/releases.xml" rel="self"/>
+ <link href="http://juicekit.org/"/>
+ <updated>2009-12-18T20:00:16-05:00</updated>
+ <id>http://juicekit.org</id>
+ <author>
+   <name>Chris Gemignani</name>
+   <email>chris.gemignani@juiceanalytics.com</email>
+ </author>
+
+ 
+ 
+</feed>

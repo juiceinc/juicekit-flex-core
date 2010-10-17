@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Interpolator,flare.animate.interpolate.Interpolator,_prop,_target,addInterpolatorRule,addInterpolatorType,clearInterpolatorRules,clearInterpolatorTypes,create,init,interpolate,reclaim,reset" name="keywords">
+<title>flare.animate.interpolate.Interpolator</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Interpolator - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/animate/interpolate/Interpolator.html&amp;flare/animate/interpolate/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Interpolator</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Interpolator"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.animate.interpolate</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Interpolator</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../interpolate/ArrayInterpolator.html">ArrayInterpolator</a>, <a href="../interpolate/ColorInterpolator.html">ColorInterpolator</a>, <a href="../interpolate/DateInterpolator.html">DateInterpolator</a>, <a href="../interpolate/MatrixInterpolator.html">MatrixInterpolator</a>, <a href="../interpolate/NumberInterpolator.html">NumberInterpolator</a>, <a href="../interpolate/ObjectInterpolator.html">ObjectInterpolator</a>, <a href="../interpolate/PointInterpolator.html">PointInterpolator</a>, <a href="../interpolate/RectangleInterpolator.html">RectangleInterpolator</a></td>
+</tr>
+</table>
+<p></p>
+  Base class for value interpolators. This class also provides factory 
+  methods for creating concrete interpolator instances -- see the
+  <code>create</code> method for details about interpolator creation.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a><a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_prop">_prop</a> : <a href="../../util/Property.html">Property</a>
+<div class="summaryTableDescription"> The property to interpolate.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_target">_target</a> : Object<div class="summaryTableDescription"> The target object whose property is being interpolated.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Interpolator()">Interpolator</a>(target:Object, property:String, start:Object, end:Object)</div>
+<div class="summaryTableDescription">
+   Base constructor for Interpolator instances.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addInterpolatorRule()">addInterpolatorRule</a>(f:Function):void</div>
+<div class="summaryTableDescription">[static]
+   Adds a rule to the interpolator factory.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addInterpolatorType()">addInterpolatorType</a>(valueType:String, interpType:String):void</div>
+<div class="summaryTableDescription">[static]
+   Extends the interpolator factory with a new interpolator type.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearInterpolatorRules()">clearInterpolatorRules</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Clears all interpolator rule functions from the interpolator
+   factory.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clearInterpolatorTypes()">clearInterpolatorTypes</a>():void</div>
+<div class="summaryTableDescription">[static]
+   Clears the lookup table of interpolator types, removing all
+   type to interpolator mappings.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#create()">create</a>(target:Object, property:String, start:Object, end:Object):<a href="../interpolate/Interpolator.html">Interpolator</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Returns a new interpolator instance for the given target object,
+   property name, and interpolation target value.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#interpolate()">interpolate</a>(f:Number):void</div>
+<div class="summaryTableDescription">
+   Calculate and set an interpolated property value.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reclaim()">reclaim</a>(interp:<a href="Interpolator.html">Interpolator</a>):void</div>
+<div class="summaryTableDescription">[static]
+   Reclaims an interpolator for later recycling.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#reset()">reset</a>(target:Object, property:String, start:Object, end:Object):void</div>
+<div class="summaryTableDescription">
+   Re-initializes an exising interpolator instance.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#init()">init</a>(start:Object, end:Object):void</div>
+<div class="summaryTableDescription">
+   Performs initialization of an interpolator, typically by
+   initializing the start and ending values.</div>
+</td><td class="summaryTableOwnerCol">Interpolator</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="_prop"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_prop</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _prop:<a href="../../util/Property.html">Property</a></code><p> The property to interpolate. </p></div>
+<a name="_target"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_target</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _target:Object</code><p> The target object whose property is being interpolated. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Interpolator()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Interpolator</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Interpolator(target:Object, property:String, start:Object, end:Object)</code><p>
+   Base constructor for Interpolator instances.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:Object</code> &mdash; the object whose property is being interpolated
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code> &mdash; the property to interpolate
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">start</span>:Object</code> &mdash; the target value of the interpolation
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">end</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addInterpolatorRule()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addInterpolatorRule</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function addInterpolatorRule(f:Function):void</code><p>
+   Adds a rule to the interpolator factory. The input function should
+   take 4 arguments -- a target object, property name string, a
+   starting value, and a target value -- and either return a fully
+   qualified class name for the type of interpolator to use, or null if
+   this rule does not apply.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:Function</code> &mdash; the rule function for supplying custom interpolator types
+    based on contextual conditions
+   </td>
+</tr>
+</table>
+</div>
+<a name="addInterpolatorType()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addInterpolatorType</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function addInterpolatorType(valueType:String, interpType:String):void</code><p>
+   Extends the interpolator factory with a new interpolator type.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">valueType</span>:String</code> &mdash; the fully qualified class name for the object type
+    to interpolate
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">interpType</span>:String</code> &mdash; the fully qualified class name for the
+    interpolator class type
+   </td>
+</tr>
+</table>
+</div>
+<a name="clearInterpolatorRules()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearInterpolatorRules</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function clearInterpolatorRules():void</code><p>
+   Clears all interpolator rule functions from the interpolator
+   factory.
+   </p></div>
+<a name="clearInterpolatorTypes()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clearInterpolatorTypes</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function clearInterpolatorTypes():void</code><p>
+   Clears the lookup table of interpolator types, removing all
+   type to interpolator mappings.
+   </p></div>
+<a name="create()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">create</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function create(target:Object, property:String, start:Object, end:Object):<a href="../interpolate/Interpolator.html">Interpolator</a></code><p>
+   Returns a new interpolator instance for the given target object,
+   property name, and interpolation target value. This factory method
+   follows these steps to provide an interpolator instance:
+   <ol>
+    <li>The list of installed interpolator rules is consulted, and if a
+        rule returns a non-null class name string, an interpolator of
+        that type will be returned.</li>
+    <li>If all rules return null values, then the class type of the
+        interpolation value is used to look up the appropriate
+        interpolator type for that value. If a matching interpolator
+        type is found, an interpolator is initialized and returned.
+        </li>
+    <li>If no matching type is found, a default ObjectInterpolator
+        instance is initialized and returned.</li>
+   </ol>
+   
+   </p><p>By default, the interpolator factory contains two rules. The
+   first rule returns the class name of ColorInterpolator for any
+   property names containing the string "color" or "Color". The second
+   rule returns the class name of ObjectInterpolator for the property
+   name "shape".</p>
+   
+   <p>The default value type to interpolator type mappings are:
+   <ul>
+    <li><code>Number -> NumberInterpolator</code></li>
+    <li><code>int -> NumberInterpolator</code></li>
+    <li><code>Date -> DateInterpolator</code></li>
+    <li><code>Array -> ArrayInterpolator</code></li>
+    <li><code>flash.geom.Point -> PointInterpolator</code></li>
+    <li><code>flash.geom.Rectangle -> RectangleInterpolator</code></li>
+   </ul>
+   </p>
+   
+   <p>The interpolator factory can be extended either by adding new
+   interpolation rule functions or by adding new mappings from
+   interpolation value types to custom interpolator classes.</p>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:Object</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">start</span>:Object</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">end</span>:Object</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../interpolate/Interpolator.html">Interpolator</a></code></td>
+</tr>
+</table>
+</div>
+<a name="init()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function init(start:Object, end:Object):void</code><p>
+   Performs initialization of an interpolator, typically by
+   initializing the start and ending values. Subclasses should
+   override this method for custom initialization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">start</span>:Object</code> &mdash; the target value of the interpolation
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">end</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<a name="interpolate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interpolate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function interpolate(f:Number):void</code><p>
+   Calculate and set an interpolated property value. Subclasses should
+   override this method to implement custom interpolation routines.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">f</span>:Number</code> &mdash; the interpolation fraction (typically between 0 and 1)
+   </td>
+</tr>
+</table>
+</div>
+<a name="reclaim()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reclaim</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function reclaim(interp:<a href="Interpolator.html">Interpolator</a>):void</code><p>
+   Reclaims an interpolator for later recycling. The reclaimed
+   interpolator should not be in active use by any other classes.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">interp</span>:<a href="Interpolator.html">Interpolator</a></code> &mdash; the Interpolator to reclaim
+   </td>
+</tr>
+</table>
+</div>
+<a name="reset()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reset(target:Object, property:String, start:Object, end:Object):void</code><p>
+   Re-initializes an exising interpolator instance.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:Object</code> &mdash; the object whose property is being interpolated
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">property</span>:String</code> &mdash; the property to interpolate
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">start</span>:Object</code> &mdash; the target value of the interpolation
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">end</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

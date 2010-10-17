@@ -1,0 +1,1192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Data,flare.vis.data.Data,EDGES,NODES,_edges,_groups,_nodes,_root,_span,_tree,directedEdges,edges,length,nodes,root,tree,treeEdgeWeight,treePolicy,addEdge,addEdgeFor,addGroup,addNode,clear,contains,createEdges,fromArray,fromDataSet,group,newEdge,newNode,remove,removeEdge,removeGroup,removeNode,visit" name="keywords">
+<title>flare.vis.data.Data</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Data - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/vis/data/Data.html&amp;flare/vis/data/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Data</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Data"); titleBar_setSubNav(true,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.vis.data</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Data</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Data <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../data/Tree.html">Tree</a></td>
+</tr>
+</table>
+<p></p>
+  Data structure for managing a collection of visual data objects. The
+  Data class manages both unstructured data and data organized in a
+  general graph (or network structure), maintaining collections of both
+  nodes and edges. Collections of data sprites are maintained by
+  <code>DataList</code> instances. The individual data lists provide
+  methods for accessing, manipulating, sorting, and generating statistics
+  about the visual data objects.
+  
+  <p>In addition to the required <code>nodes</code> and <code>edges</code>
+  lists, clients can add new custom lists (for example, to manage a
+  selected subset of the data) by using the <code>addGroup</code> method
+  and then accessing the list with the <code>group</code> method.
+  Individual data groups can be directly processed by many of the
+  visualization operators in the <code>flare.vis.operator</code> package.
+  </p>
+  
+  <p>While Data objects maintain a collection of visual DataSprites,
+  they are not themselves visual object containers. Instead a Data
+  instance is used as input to a <code>Visualization</code> that
+  is responsible for processing the DataSprite instances and adding
+  them to the Flash display list.</p>
+  
+  <p>The data class also manages the automatic generation of spanning
+  trees over a graph when needed for tree-based operations (such as tree
+  layout algorithms). This implemented by a
+  <code>flare.analytics.graph.SpanningTree</code> operator which can be
+  parameterized using the <code>treePolicy</code>,
+  <code>treeEdgeWeight</code>, and <code>root</code> properties of this
+  class. Alternatively, clients can create their own spanning trees as
+  a <code>Tree</code instance and set this as the spanning tree.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../data/DataList.html" target="">flare.vis.data.DataList</a>
+<br>
+<a href="../../analytics/graph/SpanningTree.html" target="">flare.analytics.graph.SpanningTree</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#directedEdges">directedEdges</a> : Boolean<div class="summaryTableDescription"> The default directedness of new edges.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#edges">edges</a> : <a href="../data/DataList.html">DataList</a>
+<div class="summaryTableDescription">[read-only] The collection of EdgeSprites.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#length">length</a> : int<div class="summaryTableDescription">[read-only] The total number of items (nodes and edges) in the data.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#nodes">nodes</a> : <a href="../data/DataList.html">DataList</a>
+<div class="summaryTableDescription">[read-only] The collection of NodeSprites.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#root">root</a> : <a href="../data/NodeSprite.html">NodeSprite</a>
+<div class="summaryTableDescription"> The root node of the spanning tree.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tree">tree</a> : <a href="../data/Tree.html">Tree</a>
+<div class="summaryTableDescription">
+   A spanning tree for this graph.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#treeEdgeWeight">treeEdgeWeight</a> : Function<div class="summaryTableDescription"> The edge weight function for computing a minimum spanning tree.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#treePolicy">treePolicy</a> : String<div class="summaryTableDescription"> The spanning tree creation policy.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<table id="summaryTableProtectedProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_edges">_edges</a> : <a href="../data/DataList.html">DataList</a>
+<div class="summaryTableDescription"> Internal list of EdgeSprites.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_groups">_groups</a> : Object<div class="summaryTableDescription"> Internal set of data groups.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_nodes">_nodes</a> : <a href="../data/DataList.html">DataList</a>
+<div class="summaryTableDescription"> Internal list of NodeSprites.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_root">_root</a> : <a href="../data/NodeSprite.html">NodeSprite</a> = null<div class="summaryTableDescription"> The root node of the spanning tree.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_span">_span</a> : <a href="../data/TreeBuilder.html">TreeBuilder</a>
+<div class="summaryTableDescription"> The spanning tree constructor class.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#_tree">_tree</a> : <a href="../data/Tree.html">Tree</a> = null<div class="summaryTableDescription"> The the spanning tree.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Data()">Data</a>(directedEdges:Boolean = false)</div>
+<div class="summaryTableDescription">
+   Creates a new Data instance.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEdge()">addEdge</a>(e:<a href="EdgeSprite.html">EdgeSprite</a>):<a href="../data/EdgeSprite.html">EdgeSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Add an edge to this data set.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEdgeFor()">addEdgeFor</a>(source:<a href="NodeSprite.html">NodeSprite</a>, target:<a href="NodeSprite.html">NodeSprite</a>, directed:Object = null, data:Object = null):<a href="../data/EdgeSprite.html">EdgeSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Creates a new edge between the given nodes and adds it to the
+   data collection.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addGroup()">addGroup</a>(name:String, group:<a href="DataList.html">DataList</a> = null):<a href="../data/DataList.html">DataList</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a new data group.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addNode()">addNode</a>(d:Object = null):<a href="../data/NodeSprite.html">NodeSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a node to this data collection.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clear()">clear</a>():void</div>
+<div class="summaryTableDescription">
+   Clears this data set, removing all nodes and edges.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#contains()">contains</a>(d:<a href="DataSprite.html">DataSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Indicates if this Data object contains the input DataSprite.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createEdges()">createEdges</a>(sortBy:* = null, groupBy:Boolean = null, ignoreExistingEdges:* = false):void</div>
+<div class="summaryTableDescription">
+   Generates edges for this data collection that connect the nodes
+   according to the input properties.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fromArray()">fromArray</a>(a:Array):<a href="../data/Data.html">Data</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Creates a new Data instance from an array of tuples.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#fromDataSet()">fromDataSet</a>(ds:<a href="../../data/DataSet.html">DataSet</a>):<a href="../data/Data.html">Data</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Creates a new Data instance from a data set.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#group()">group</a>(name:String):<a href="../data/DataList.html">DataList</a>
+</div>
+<div class="summaryTableDescription">
+   Retrieves the data group with the given name.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#remove()">remove</a>(d:<a href="DataSprite.html">DataSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Removes a DataSprite (node or edge) from this data collection.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEdge()">removeEdge</a>(e:<a href="EdgeSprite.html">EdgeSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Removes an edge from this data set.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeGroup()">removeGroup</a>(name:String):<a href="../data/DataList.html">DataList</a>
+</div>
+<div class="summaryTableDescription">
+   Removes a data group.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeNode()">removeNode</a>(n:<a href="NodeSprite.html">NodeSprite</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Removes a node from this data set.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#visit()">visit</a>(v:Function, group:String = null, filter:Boolean = null, reverse:* = false):Boolean</div>
+<div class="summaryTableDescription">
+   Visit items, invoking a function on all visited elements.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#newEdge()">newEdge</a>(s:<a href="NodeSprite.html">NodeSprite</a>, t:<a href="NodeSprite.html">NodeSprite</a>, d:Boolean, data:Object):<a href="../data/EdgeSprite.html">EdgeSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Internal function for creating a new edge.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#newNode()">newNode</a>(data:Object):<a href="../data/NodeSprite.html">NodeSprite</a>
+</div>
+<div class="summaryTableDescription">
+   Internal function for creating a new node.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:add">add</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">&nbsp;</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:remove">remove</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">&nbsp;</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#EDGES">EDGES</a> : String = "edges"<div class="summaryTableDescription">[static] Constant indicating the edges in a Data object.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#NODES">NODES</a> : String = "nodes"<div class="summaryTableDescription">[static] Constant indicating the nodes in a Data object.</div>
+</td><td class="summaryTableOwnerCol">Data</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="directedEdges"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">directedEdges</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var directedEdges:Boolean</code><p> The default directedness of new edges. </p></div>
+<a name="_edges"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_edges</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _edges:<a href="../data/DataList.html">DataList</a></code><p> Internal list of EdgeSprites. </p></div>
+<a name="edges"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">edges</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>edges:<a href="../data/DataList.html">DataList</a></code>&nbsp;&nbsp;[read-only]<p> The collection of EdgeSprites. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get edges():<a href="../data/DataList.html">DataList</a></code>
+<br>
+</div>
+<a name="_groups"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_groups</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _groups:Object</code><p> Internal set of data groups. </p></div>
+<a name="length"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">length</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>length:int</code>&nbsp;&nbsp;[read-only]<p> The total number of items (nodes and edges) in the data. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get length():int</code>
+<br>
+</div>
+<a name="_nodes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_nodes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _nodes:<a href="../data/DataList.html">DataList</a></code><p> Internal list of NodeSprites. </p></div>
+<a name="nodes"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">nodes</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>nodes:<a href="../data/DataList.html">DataList</a></code>&nbsp;&nbsp;[read-only]<p> The collection of NodeSprites. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get nodes():<a href="../data/DataList.html">DataList</a></code>
+<br>
+</div>
+<a name="_root"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_root</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _root:<a href="../data/NodeSprite.html">NodeSprite</a> = null</code><p> The root node of the spanning tree. </p></div>
+<a name="root"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">root</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>root:<a href="../data/NodeSprite.html">NodeSprite</a></code>&nbsp;&nbsp;[read-write]<p> The root node of the spanning tree. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get root():<a href="../data/NodeSprite.html">NodeSprite</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set root(value:<a href="../data/NodeSprite.html">NodeSprite</a>):void</code>
+<br>
+</div>
+<a name="_span"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_span</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _span:<a href="../data/TreeBuilder.html">TreeBuilder</a></code><p> The spanning tree constructor class. </p></div>
+<a name="_tree"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">_tree</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected var _tree:<a href="../data/Tree.html">Tree</a> = null</code><p> The the spanning tree. </p></div>
+<a name="tree"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tree</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tree:<a href="../data/Tree.html">Tree</a></code>&nbsp;&nbsp;[read-write]<p>
+   A spanning tree for this graph. The spanning tree generated is
+   determined by the <code>root</code>, <code>treePolicy</code>,
+   and <code>treeEdgeWeight</code> properties. By default, the tree
+   is built using a breadth-first spanning tree using the first node
+   in the graph as the root.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tree():<a href="../data/Tree.html">Tree</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tree(value:<a href="../data/Tree.html">Tree</a>):void</code>
+<br>
+</div>
+<a name="treeEdgeWeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">treeEdgeWeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>treeEdgeWeight:Function</code>&nbsp;&nbsp;[read-write]<p> The edge weight function for computing a minimum spanning tree.
+    This function will only have an effect if the
+    <code>treePolicy</code> is
+    <code>SpanningTree.MINIMUM_SPAN</code> </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get treeEdgeWeight():Function</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set treeEdgeWeight(value:Function):void</code>
+<br>
+</div>
+<a name="treePolicy"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">treePolicy</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>treePolicy:String</code>&nbsp;&nbsp;[read-write]<p> The spanning tree creation policy. 
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get treePolicy():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set treePolicy(value:String):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../analytics/graph/SpanningTree.html" target="">flare.analytics.graph.SpanningTree</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Data()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Data</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Data(directedEdges:Boolean = false)</code><p>
+   Creates a new Data instance.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">directedEdges</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; the default directedness of new edges
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addEdge()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEdge</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEdge(e:<a href="EdgeSprite.html">EdgeSprite</a>):<a href="../data/EdgeSprite.html">EdgeSprite</a></code><p>
+   Add an edge to this data set. The input must be of type EdgeSprite,
+   and must have both source and target nodes that are already in
+   this data set. If any of these conditions are not met, this method
+   will return null. Note that no exception will be thrown on failures.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="EdgeSprite.html">EdgeSprite</a></code> &mdash; the EdgeSprite to add
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/EdgeSprite.html">EdgeSprite</a></code> &mdash; 
+                        the newly added EdgeSprite
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="addEdgeFor()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEdgeFor</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addEdgeFor(source:<a href="NodeSprite.html">NodeSprite</a>, target:<a href="NodeSprite.html">NodeSprite</a>, directed:Object = null, data:Object = null):<a href="../data/EdgeSprite.html">EdgeSprite</a></code><p>
+   Creates a new edge between the given nodes and adds it to the
+   data collection.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">source</span>:<a href="NodeSprite.html">NodeSprite</a></code> &mdash; the source node (must already be in this data set)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="NodeSprite.html">NodeSprite</a></code> &mdash; the target node (must already be in this data set)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">directed</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; indicates the directedness of the edge (null to
+    use this Data's default, true for directed, false for undirected)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; a data tuple containing data values for the edge
+    instance. If non-null, this will become the EdgeSprite's
+    <code>data</code> property.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/EdgeSprite.html">EdgeSprite</a></code> &mdash; 
+                        the newly added EdgeSprite
+    
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="addGroup()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addGroup</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addGroup(name:String, group:<a href="DataList.html">DataList</a> = null):<a href="../data/DataList.html">DataList</a></code><p>
+   Adds a new data group. If a group of the same name already exists,
+   it will be replaced, except for the groups "nodes" and "edges",
+   which can not be replaced. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the group to add
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">group</span>:<a href="DataList.html">DataList</a></code> (default = <code>null</code>)<code></code> &mdash; the data list to add, if null a new,
+    empty <code>DataList</code> instance will be created.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/DataList.html">DataList</a></code> &mdash; 
+                        the added data group
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="addNode()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addNode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addNode(d:Object = null):<a href="../data/NodeSprite.html">NodeSprite</a></code><p>
+   Adds a node to this data collection.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; either a data tuple or NodeSprite object. If the input is
+    a non-null data tuple, this will become the new node's
+    <code>data</code> property. If the input is a NodeSprite, it will
+    be directly added to the collection.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/NodeSprite.html">NodeSprite</a></code> &mdash; 
+                        the newly added NodeSprite
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="clear()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clear</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clear():void</code><p>
+   Clears this data set, removing all nodes and edges.
+   </p></div>
+<a name="contains()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">contains</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function contains(d:<a href="DataSprite.html">DataSprite</a>):Boolean</code><p>
+   Indicates if this Data object contains the input DataSprite.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="DataSprite.html">DataSprite</a></code> &mdash; the DataSprite to check for containment
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if the sprite is in this data collection, false
+    otherwise.
+   </td>
+</tr>
+</table>
+</div>
+<a name="createEdges()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createEdges</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function createEdges(sortBy:* = null, groupBy:Boolean = null, ignoreExistingEdges:* = false):void</code><p>
+   Generates edges for this data collection that connect the nodes
+   according to the input properties. The nodes are sorted by the
+   sort argument and grouped by the group-by argument. All nodes
+   with the same group are sequentially connected to each other in
+   sorted order by new edges. This method is useful for generating
+   line charts from a plot of nodes.
+   </p><p>If an edge already exists between nodes, by default this method
+   will not add a new edge. Use the <code>ignoreExistingEdges</code>
+   argument to change this behavior. </p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">sortBy</span>:*</code> (default = <code>null</code>)<code></code> &mdash; the criteria for sorting the nodes, using the format
+    of <code>flare.util.Sort</code>. The input can either be a string
+    with a single property name, or an array of property names.  Items
+    are sorted in ascending order by default, prefix a property name
+    with a "-" (minus) character to sort in descending order.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">groupBy</span>:Boolean</code> (default = <code>null</code>)<code></code> &mdash; the criteria for grouping the nodes, using the format
+    of <code>flare.util.Sort</code>. The input can either be a string
+    with a single property name, or an array of property names. Items
+    are sorted in ascending order by default, prefix a property name
+    with a "-" (minus) character to sort in descending order.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">ignoreExistingEdges</span>:*</code> (default = <code>false</code>)<code></code> &mdash; if false (the default), this method will
+    not create a new edge if one already exists between two nodes. If
+    true, new edges will be created regardless.
+   </td>
+</tr>
+</table>
+</div>
+<a name="fromArray()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fromArray</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fromArray(a:Array):<a href="../data/Data.html">Data</a></code><p>
+   Creates a new Data instance from an array of tuples. The object in
+   the array will become the data objects for NodeSprites.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a</span>:Array</code> &mdash; an Array of data objects
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/Data.html">Data</a></code> &mdash; 
+                        a new Data instance, with NodeSprites populated with the
+    input data.
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="fromDataSet()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fromDataSet</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function fromDataSet(ds:<a href="../../data/DataSet.html">DataSet</a>):<a href="../data/Data.html">Data</a></code><p>
+   Creates a new Data instance from a data set.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">ds</span>:<a href="../../data/DataSet.html">DataSet</a></code> &mdash; a DataSet to visualize. For example, this data set may be
+    loaded using a data converter in the flare.data library.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/Data.html">Data</a></code> &mdash; 
+                        a new Data instance, with NodeSprites and EdgeSprites
+    populated with the input data.
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="group()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">group</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function group(name:String):<a href="../data/DataList.html">DataList</a></code><p>
+   Retrieves the data group with the given name. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the group
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/DataList.html">DataList</a></code> &mdash; 
+                        the data group
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="newEdge()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">newEdge</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function newEdge(s:<a href="NodeSprite.html">NodeSprite</a>, t:<a href="NodeSprite.html">NodeSprite</a>, d:Boolean, data:Object):<a href="../data/EdgeSprite.html">EdgeSprite</a></code><p>
+   Internal function for creating a new edge. Creates an EdgeSprite,
+   sets its data property, and applies default values.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">s</span>:<a href="NodeSprite.html">NodeSprite</a></code> &mdash; the source node
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:<a href="NodeSprite.html">NodeSprite</a></code> &mdash; the target node
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:Boolean</code> &mdash; the edge's directedness
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; the new edge's data property
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/EdgeSprite.html">EdgeSprite</a></code> &mdash; 
+                        the newly created node
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="newNode()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">newNode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function newNode(data:Object):<a href="../data/NodeSprite.html">NodeSprite</a></code><p>
+   Internal function for creating a new node. Creates a NodeSprite,
+   sets its data property, and applies default values.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:Object</code> &mdash; the new node's data property
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/NodeSprite.html">NodeSprite</a></code> &mdash; 
+                        the newly created node
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="remove()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">remove</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function remove(d:<a href="DataSprite.html">DataSprite</a>):Boolean</code><p>
+   Removes a DataSprite (node or edge) from this data collection.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">d</span>:<a href="DataSprite.html">DataSprite</a></code> &mdash; the DataSprite to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if removed successfully, false if not found
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeEdge()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEdge</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeEdge(e:<a href="EdgeSprite.html">EdgeSprite</a>):Boolean</code><p>
+   Removes an edge from this data set. The nodes connected to
+   this edge will have the edge removed from their edge lists.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">e</span>:<a href="EdgeSprite.html">EdgeSprite</a></code> &mdash; the edge to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="removeGroup()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeGroup</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeGroup(name:String):<a href="../data/DataList.html">DataList</a></code><p>
+   Removes a data group. An error will be thrown if the caller
+   attempts to remove the groups "nodes" or "edges". 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; the name of the group to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/DataList.html">DataList</a></code> &mdash; 
+                        the removed data group
+   
+                        
+                     </td>
+</tr>
+</table>
+</div>
+<a name="removeNode()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeNode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeNode(n:<a href="NodeSprite.html">NodeSprite</a>):Boolean</code><p>
+   Removes a node from this data set. All edges incident on this
+   node will also be removed. If the node is not found in this
+   data set, the method returns null.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">n</span>:<a href="NodeSprite.html">NodeSprite</a></code> &mdash; the node to remove
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="visit()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">visit</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function visit(v:Function, group:String = null, filter:Boolean = null, reverse:* = false):Boolean</code><p>
+   Visit items, invoking a function on all visited elements.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">v</span>:Function</code> &mdash; the function to invoke on each element. If the function
+    return true, the visitation is ended with an early exit
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">group</span>:String</code> (default = <code>null</code>)<code></code> &mdash; the data group to visit (e.g., NODES or EDGES). If this
+    value is null, both nodes and edges will be visited.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:Boolean</code> (default = <code>null</code>)<code></code> &mdash; an optional predicate function indicating which
+    elements should be visited. Only items for which this function
+    returns true will be visited.
+     </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">reverse</span>:*</code> (default = <code>false</code>)<code></code> &mdash; an optional parameter indicating if the visitation
+    traversal should be done in reverse (the default is false).
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; true if the visitation was interrupted with an early exit
+   </td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:add"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">add</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/DataEvent.html"><code>flare.vis.events.DataEvent</code></a>
+<br>
+<p></p>
+</div>
+<a name="event:remove"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">remove</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/DataEvent.html"><code>flare.vis.events.DataEvent</code></a>
+<br>
+<p></p>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="EDGES"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">EDGES</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const EDGES:String = "edges"</code><p> Constant indicating the edges in a Data object. </p></div>
+<a name="NODES"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">NODES</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const NODES:String = "nodes"</code><p> Constant indicating the nodes in a Data object. </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

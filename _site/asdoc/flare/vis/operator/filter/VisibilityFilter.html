@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="VisibilityFilter,flare.vis.operator.filter.VisibilityFilter,group,immediate,predicate,filter,operate" name="keywords">
+<title>flare.vis.operator.filter.VisibilityFilter</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'VisibilityFilter - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?flare/vis/operator/filter/VisibilityFilter.html&amp;flare/vis/operator/filter/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;VisibilityFilter</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class VisibilityFilter"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.vis.operator.filter</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class VisibilityFilter</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">VisibilityFilter <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="../Operator.html">Operator</a></td>
+</tr>
+</table>
+<p></p>
+  Filter operator that sets item visibility based on a filtering
+  condition. Filtering conditions are specified using Boolean-valued
+  predicate functions that return true if the item meets the filtering
+  criteria and false if it does not. For items which meet the criteria,
+  this class sets the <code>visibility</code> property to true and
+  the <code>alpha</code> value to 1. For those items that do not meet
+  the criteria, this class sets the <code>visibility</code> property to
+  false and the <code>alpha</code> value to 0.
+  
+  <p>Predicate functions can either be arbitrary functions that take
+  a single argument and return a Boolean value, or can be systematically
+  constructed using the <code>Expression</code> language provided by the
+  <code>flare.query</code> package.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../query/package-detail.html" target="">flare.query</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription"> Indicates if the operator is enabled or disabled.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#filter">filter</a> : Function<div class="summaryTableDescription"> Boolean function indicating which items to process.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#group">group</a> : String<div class="summaryTableDescription"> The name of the data group for which to compute the encoding.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#immediate">immediate</a> : Boolean = false<div class="summaryTableDescription"> Immediate mode sets the visibility settings immediately, bypassing
+    any transitioner provided.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#parameters">parameters</a> : Object<div class="summaryTableDescription"> 
+   Sets parameter values for this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#predicate">predicate</a> : Function<div class="summaryTableDescription"> Predicate function determining item visibility.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../Operator.html#visualization">visualization</a> : <a href="../../../vis/Visualization.html">Visualization</a>
+<div class="summaryTableDescription"> The visualization processed by this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#VisibilityFilter()">VisibilityFilter</a>(predicate:Function = null, group:String, filter:* = null)</div>
+<div class="summaryTableDescription">
+   Creates a new VisibilityFilter.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../Operator.html#applyParameters()">applyParameters</a>(op:<a href="../../operator/IOperator.html">IOperator</a>, params:Object):void</div>
+<div class="summaryTableDescription">[static]
+   Static method that applies parameter settings to an operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#operate()">operate</a>(t:<a href="../../../animate/Transitioner.html">Transitioner</a> = null):void</div>
+<div class="summaryTableDescription"> 
+   Performs an operation over the contents of a visualization.</div>
+</td><td class="summaryTableOwnerCol">VisibilityFilter</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../Operator.html#setup()">setup</a>():void</div>
+<div class="summaryTableDescription">
+   Setup method invoked whenever this operator's visualization
+   property is set.</div>
+</td><td class="summaryTableOwnerCol"><a href="../Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="filter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filter</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>filter:Function</code>&nbsp;&nbsp;[read-write]<p> Boolean function indicating which items to process. This function
+    <strong>does not</strong> determine which items will be visible, it
+    only determines which items are visited by this operator. Only
+    items for which this function return true will be considered by the
+    VisibilityFilter. If the function is null, all items will be
+    considered.
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get filter():Function</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set filter(value:Function):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../../../util/Filter.html" target="">flare.util.Filter</a>
+</div>
+</div>
+<a name="group"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">group</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var group:String</code><p> The name of the data group for which to compute the encoding. 
+    The default is <code>Data.NODES</code>. </p></div>
+<a name="immediate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">immediate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var immediate:Boolean = false</code><p> Immediate mode sets the visibility settings immediately, bypassing
+    any transitioner provided. </p></div>
+<a name="predicate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">predicate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var predicate:Function</code><p> Predicate function determining item visibility. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="VisibilityFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">VisibilityFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function VisibilityFilter(predicate:Function = null, group:String, filter:* = null)</code><p>
+   Creates a new VisibilityFilter.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">predicate</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; the predicate function for filtering items. This
+    should be a Boolean-valued function that returns true for items
+    that pass the filtering criteria and false for those that do not.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">group</span>:String</code> &mdash; the data group to process.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:*</code> (default = <code>null</code>)<code></code> &mdash; a Boolean-valued filter function that determines which
+    items are considered by this visibility filter. Only tems that pass
+    this filter will then have their visibility value set according
+    to the <code>predicate</code> argument.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="operate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">operate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function operate(t:<a href="../../../animate/Transitioner.html">Transitioner</a> = null):void</code><p> 
+   Performs an operation over the contents of a visualization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:<a href="../../../animate/Transitioner.html">Transitioner</a></code> (default = <code>null</code>)<code></code> &mdash; a Transitioner instance for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

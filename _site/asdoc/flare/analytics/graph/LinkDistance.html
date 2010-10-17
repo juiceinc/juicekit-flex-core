@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="LinkDistance,flare.analytics.graph.LinkDistance,sources,distanceField,incomingField,links,onpathField,calculate,operate" name="keywords">
+<title>flare.analytics.graph.LinkDistance</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'LinkDistance - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/analytics/graph/LinkDistance.html&amp;flare/analytics/graph/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;LinkDistance</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class LinkDistance"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.analytics.graph</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class LinkDistance</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LinkDistance <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+<p></p>
+  Calculates the link distance from a source node based on a breadth-first
+  traversal. Link distance is calculated as the smallest number of edges
+  connecting a node to a source node. Any edge weights are ignored, to
+  include weighted edges in the calculation, use the
+  <code>ShortestPaths</code> operator instead.
+  
+  </p>Nodes are annotated with both the computed distance and the incoming
+  edge in the shortest link distance path to a source node. Edges are
+  annotated with a Boolean value indicating whether or not the edge lies
+  along one of these computed shortest paths.</p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#distanceField">distanceField</a> : String<div class="summaryTableDescription"> The property in which to store the link distance.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription"> Indicates if the operator is enabled or disabled.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#incomingField">incomingField</a> : String<div class="summaryTableDescription"> The property in which to store incoming edges along a shortest
+    path.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#links">links</a> : int<div class="summaryTableDescription"> The link type to consider when calculating link distance.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onpathField">onpathField</a> : String<div class="summaryTableDescription"> The property in which to store a path inclusion flag for edges.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#parameters">parameters</a> : Object<div class="summaryTableDescription"> 
+   Sets parameter values for this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sources">sources</a> : Array<div class="summaryTableDescription"> The roots of the breadth-first search.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#visualization">visualization</a> : <a href="../../vis/Visualization.html">Visualization</a>
+<div class="summaryTableDescription"> The visualization processed by this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#LinkDistance()">LinkDistance</a>(sources:Array = null)</div>
+<div class="summaryTableDescription">
+   Creates a new LinkDistance operator.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../vis/operator/Operator.html#applyParameters()">applyParameters</a>(op:<a href="../../vis/operator/IOperator.html">IOperator</a>, params:Object):void</div>
+<div class="summaryTableDescription">[static]
+   Static method that applies parameter settings to an operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#calculate()">calculate</a>(data:<a href="../../vis/data/Data.html">Data</a>, sources:*):void</div>
+<div class="summaryTableDescription">
+   Calculates link distances from a set of source nodes for for each
+   node in the graph.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#operate()">operate</a>(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</div>
+<div class="summaryTableDescription"> 
+   Performs an operation over the contents of a visualization.</div>
+</td><td class="summaryTableOwnerCol">LinkDistance</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../vis/operator/Operator.html#setup()">setup</a>():void</div>
+<div class="summaryTableDescription">
+   Setup method invoked whenever this operator's visualization
+   property is set.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="distanceField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">distanceField</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>distanceField:String</code>&nbsp;&nbsp;[read-write]<p> The property in which to store the link distance. This property
+    is used to annotate nodes with the minimum link distance to one of
+    the source nodes. The default value is "props.distance". </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get distanceField():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set distanceField(value:String):void</code>
+<br>
+</div>
+<a name="incomingField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">incomingField</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>incomingField:String</code>&nbsp;&nbsp;[read-write]<p> The property in which to store incoming edges along a shortest
+    path. This property is used to annotate nodes with the incoming
+    along a shortest path from one of the source nodes. By following
+    sequential incoming edges, one can recreate the shortest path from
+    the nearest source node. The default value is "props.incoming". </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get incomingField():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set incomingField(value:String):void</code>
+<br>
+</div>
+<a name="links"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">links</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>links:int</code>&nbsp;&nbsp;[read-write]<p> The link type to consider when calculating link distance. Should
+    be one of <code>NodeSprite.GRAPH_LINKS</code>,
+    <code>NodeSprite.IN_LINKS</code>, or
+    <code>NodeSprite.OUT_LINKS</code>. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get links():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set links(value:int):void</code>
+<br>
+</div>
+<a name="onpathField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onpathField</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>onpathField:String</code>&nbsp;&nbsp;[read-write]<p> The property in which to store a path inclusion flag for edges.
+    This property is used to mark edges as belonging to one of the
+    computed shortest paths: <code>true</code> indicates that the edge
+    participates in a shortest path, <code>false</code> indicates that
+    the edge does not lie along a shortest path. The default value is
+    "props.onpath". </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get onpathField():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set onpathField(value:String):void</code>
+<br>
+</div>
+<a name="sources"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sources</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var sources:Array</code><p> The roots of the breadth-first search. The elements of the array
+    should either be NodeSprite instances or integer indices into
+    the node array. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="LinkDistance()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LinkDistance</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function LinkDistance(sources:Array = null)</code><p>
+   Creates a new LinkDistance operator.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">sources</span>:Array</code> (default = <code>null</code>)<code></code> &mdash; an Array specifying the roots of the breadth-first
+    search. The elements of the array should either be
+    <code>NodeSprite</code> instances or integer indices into the node
+    array.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="calculate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">calculate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function calculate(data:<a href="../../vis/data/Data.html">Data</a>, sources:*):void</code><p>
+   Calculates link distances from a set of source nodes for for each
+   node in the graph. Each node in the graph will be annotated with
+   its link distance from the nearest source node.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">data</span>:<a href="../../vis/data/Data.html">Data</a></code> &mdash; the graph to calculate distances for
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">sources</span>:*</code> &mdash; one or more source nodes from which to measure the
+    distance. This input can either be a single node or an array of
+    nodes. Nodes can be indicated as either a <code>NodeSprite</code>
+    instance or an integer index into the <code>data.nodes</code>
+    property.
+   </td>
+</tr>
+</table>
+</div>
+<a name="operate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">operate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function operate(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</code><p> 
+   Performs an operation over the contents of a visualization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> (default = <code>null</code>)<code></code> &mdash; a Transitioner instance for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

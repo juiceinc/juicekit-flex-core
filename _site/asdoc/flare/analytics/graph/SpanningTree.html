@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="SpanningTree,flare.analytics.graph.SpanningTree,enabled,visualization,parameters,operate,setup" name="keywords">
+<title>flare.analytics.graph.SpanningTree</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SpanningTree - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/analytics/graph/SpanningTree.html&amp;flare/analytics/graph/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SpanningTree</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SpanningTree"); titleBar_setSubNav(true,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.analytics.graph</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SpanningTree</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SpanningTree <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../../vis/operator/IOperator.html">IOperator</a></td>
+</tr>
+</table>
+<p></p>
+  Calculates a spanning tree for a graph structure. This operator can
+  create spanning trees by breadth-first search, depth-first search, or by
+  computing a minimum spanning tree. The default is to find a minimum
+  spanning tree, which in turn defaults to breadth-first search if no edge
+  weight function is provided.
+  
+  <p>This class can annotate graph edges as belonging to the spanning tree
+  (done if the <code>annotateEdges</code> property is true), and can
+  construct a <code>Tree</code> instance (done if the
+  <code>buildTree<code> property is true). Generated <code>Tree<code>
+  instances are stored in the <code>tree</code> property. Generated trees
+  contain the original nodes and edges in the input graph, and any
+  previous parent or child links for input nodes will be cleared and
+  overwritten.</p>
+  
+  <p>This class extends the TreeBuilder class to also function as an
+  operator that can be added to a visualization's operator list.</p>
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#annotateEdges">annotateEdges</a> : Boolean<div class="summaryTableDescription"> Flag indicating if edges in the spanning tree should be annotated.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#buildTree">buildTree</a> : Boolean<div class="summaryTableDescription"> Flag indicating if a spanning tree instance should be created.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#edgeWeight">edgeWeight</a> : Function<div class="summaryTableDescription"> A function determining edge weights used in the spanning tree
+    calculation.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#enabled">enabled</a> : Boolean<div class="summaryTableDescription">  Indicates if the operator is enabled or disabled.</div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#links">links</a> : int<div class="summaryTableDescription"> The link type to consider when constructing a spanning tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parameters">parameters</a> : Object<div class="summaryTableDescription">[write-only] 
+   Sets parameter values for this operator.</div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#policy">policy</a> : String<div class="summaryTableDescription"> The traveral policy used to generate the spanning tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#root">root</a> : <a href="../../vis/data/NodeSprite.html">NodeSprite</a>
+<div class="summaryTableDescription"> The root node for the spanning tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#spanningField">spanningField</a> : String<div class="summaryTableDescription"> The property with which to annotate edges that make up the spanning
+    tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#tree">tree</a> : <a href="../../vis/data/Tree.html">Tree</a>
+<div class="summaryTableDescription"> The tree created by this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#visualization">visualization</a> : <a href="../../vis/Visualization.html">Visualization</a>
+<div class="summaryTableDescription">  The visualization processed by this operator.</div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SpanningTree()">SpanningTree</a>(policy:String = null, buildTree:Boolean = false, annotateEdges:Boolean = true, root:<a href="../../vis/data/NodeSprite.html">NodeSprite</a> = null, edgeWeight:* = null)</div>
+<div class="summaryTableDescription">
+   Creates a new SpanningTree operator
+   </div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../vis/data/TreeBuilder.html#calculate()">calculate</a>(data:<a href="../../vis/data/Data.html">Data</a>, n:<a href="../../vis/data/NodeSprite.html">NodeSprite</a>):void</div>
+<div class="summaryTableDescription">
+   Calculates the spanning tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#operate()">operate</a>(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</div>
+<div class="summaryTableDescription"> 
+   Performs an operation over the contents of a visualization.</div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setup()">setup</a>():void</div>
+<div class="summaryTableDescription"> 
+   Setup method invoked whenever this operator's visualization
+   property is set.</div>
+</td><td class="summaryTableOwnerCol">SpanningTree</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<div class="showHideLinks">
+<div class="hideInheritedConstant" id="hideInheritedConstant">
+<a onclick="javascript:setInheritedVisible(false,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Constants</a>
+</div>
+<div class="showInheritedConstant" id="showInheritedConstant">
+<a onclick="javascript:setInheritedVisible(true,'Constant');" href="#constantSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Constants</a>
+</div>
+</div>
+<table id="summaryTableConstant" class="summaryTable hideInheritedConstant" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#BREADTH_FIRST">BREADTH_FIRST</a> : String = "breadth-first"<div class="summaryTableDescription">[static] Policy for a spanning tree built using breadth-first search.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#DEPTH_FIRST">DEPTH_FIRST</a> : String = "depth-first"<div class="summaryTableDescription">[static] Policy for a spanning tree built using depth-first search.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+<tr class="hideInheritedConstant">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/data/TreeBuilder.html#MINIMUM_SPAN">MINIMUM_SPAN</a> : String = "minimum-span"<div class="summaryTableDescription">[static] Policy for building a minimum spanning tree.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/data/TreeBuilder.html">TreeBuilder</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="enabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">enabled</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>enabled:Boolean</code>&nbsp;&nbsp;[read-write]<p>  Indicates if the operator is enabled or disabled. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get enabled():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set enabled(value:Boolean):void</code>
+<br>
+</div>
+<a name="parameters"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parameters</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parameters:Object</code>&nbsp;&nbsp;[write-only]<p> 
+   Sets parameter values for this operator.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set parameters(value:Object):void</code>
+<br>
+</div>
+<a name="visualization"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">visualization</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>visualization:<a href="../../vis/Visualization.html">Visualization</a></code>&nbsp;&nbsp;[read-write]<p>  The visualization processed by this operator. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get visualization():<a href="../../vis/Visualization.html">Visualization</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set visualization(value:<a href="../../vis/Visualization.html">Visualization</a>):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SpanningTree()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SpanningTree</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SpanningTree(policy:String = null, buildTree:Boolean = false, annotateEdges:Boolean = true, root:<a href="../../vis/data/NodeSprite.html">NodeSprite</a> = null, edgeWeight:* = null)</code><p>
+   Creates a new SpanningTree operator
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">policy</span>:String</code> (default = <code>null</code>)<code></code> &mdash; the spanning tree creation policy. The default is
+    <code>SpanningTree.MINIMUM_SPAN</code>
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">buildTree</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; if true, this operator will build a new
+    <code>Tree</code> instance containing the spanning tree
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">annotateEdges</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; if true, this operator will annotate the
+    edges of the original graph as belonging to the spanning tree
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">root</span>:<a href="../../vis/data/NodeSprite.html">NodeSprite</a></code> (default = <code>null</code>)<code></code> &mdash; the root node from which to compute the spanning tree
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">edgeWeight</span>:*</code> (default = <code>null</code>)<code></code> &mdash; the edge weight values. This can either be a
+    <code>Function</code> that returns weight values or a
+    <code>String</code> providing the name of a property to look up on
+    <code>EdgeSprite</code> instances.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="operate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">operate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function operate(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</code><p> 
+   Performs an operation over the contents of a visualization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> (default = <code>null</code>)<code></code> &mdash; a Transitioner instance for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<a name="setup()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setup</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setup():void</code><p> 
+   Setup method invoked whenever this operator's visualization
+   property is set.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

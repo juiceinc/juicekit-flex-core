@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="AspectRatioBanker,flare.analytics.optimization.AspectRatioBanker,bankYAxis,banker,maxHeight,maxWidth,dataField,averageAbsoluteAngle,medianAbsoluteSlope,operate" name="keywords">
+<title>flare.analytics.optimization.AspectRatioBanker</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'AspectRatioBanker - JuiceKit, a Flash visualization framework, version 1.2.3';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">JuiceKit, a Flash visualization framework, version 1.2.3</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?flare/analytics/optimization/AspectRatioBanker.html&amp;flare/analytics/optimization/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;AspectRatioBanker</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class AspectRatioBanker"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">flare.analytics.optimization</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class AspectRatioBanker</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">AspectRatioBanker <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+<p></p>
+  Computes an optimized aspect ratio for drawing a line chart.
+  This operator will update the visualization's bounds to reflect the
+  optimized aspect ratio. Place this operator in an
+  <code>OperatorList</code> <b>before</b> the <code>AxisLayout</code>
+  operator, and set the <code>dataField</code> property to be the
+  same as the axis data field that should be banked. For example, in
+  a time series chart with time on the x-axis, the data field for this
+  operator should be the same as the data field used for the y-axis.
+  By default this class assumes that the data field is being laid out
+  on the y-axis. If this is not the case (e.g., you have a vertically
+  oriented line chart), be sure to set the <code>bankYAxis</code>
+  property to <code>false</code>.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#banker">banker</a> : Function<div class="summaryTableDescription"> The banking function to use.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bankYAxis">bankYAxis</a> : Boolean = true<div class="summaryTableDescription"> Indicates if the data field is on the y-axis (default true).</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dataField">dataField</a> : String<div class="summaryTableDescription"> The data field of the values to bank.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription"> Indicates if the operator is enabled or disabled.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#maxHeight">maxHeight</a> : Number = 500<div class="summaryTableDescription"> The maximum height for the visualization bounds.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#maxWidth">maxWidth</a> : Number = 500<div class="summaryTableDescription"> The maximum width for the visualization bounds.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#parameters">parameters</a> : Object<div class="summaryTableDescription"> 
+   Sets parameter values for this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../vis/operator/Operator.html#visualization">visualization</a> : <a href="../../vis/Visualization.html">Visualization</a>
+<div class="summaryTableDescription"> The visualization processed by this operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#AspectRatioBanker()">AspectRatioBanker</a>(dataField:String = null, bankYAxis:Boolean = true, maxWidth:Number = 500, maxHeight:Number = 500)</div>
+<div class="summaryTableDescription">
+   Creates a new AspectRatioBanker.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../vis/operator/Operator.html#applyParameters()">applyParameters</a>(op:<a href="../../vis/operator/IOperator.html">IOperator</a>, params:Object):void</div>
+<div class="summaryTableDescription">[static]
+   Static method that applies parameter settings to an operator.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#averageAbsoluteAngle()">averageAbsoluteAngle</a>(a:Array):Number</div>
+<div class="summaryTableDescription">[static]
+      Bank the average absolute orientation to 45 degrees.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#medianAbsoluteSlope()">medianAbsoluteSlope</a>(a:Array):Number</div>
+<div class="summaryTableDescription">[static]
+      Bank the median absolute slope to 45 degrees.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#operate()">operate</a>(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</div>
+<div class="summaryTableDescription"> 
+   Performs an operation over the contents of a visualization.</div>
+</td><td class="summaryTableOwnerCol">AspectRatioBanker</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../vis/operator/Operator.html#setup()">setup</a>():void</div>
+<div class="summaryTableDescription">
+   Setup method invoked whenever this operator's visualization
+   property is set.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../vis/operator/Operator.html">Operator</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="banker"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">banker</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var banker:Function</code><p> The banking function to use. This is a function that takes an
+    array of Numbers as input and returns an aspect ratio. It is
+    expected that this function will be one of the static functions of
+    this class. The default is <code>averageAbsoluteAngle</code>. </p></div>
+<a name="bankYAxis"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bankYAxis</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var bankYAxis:Boolean = true</code><p> Indicates if the data field is on the y-axis (default true). </p></div>
+<a name="dataField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dataField</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>dataField:String</code>&nbsp;&nbsp;[read-write]<p> The data field of the values to bank. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get dataField():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set dataField(value:String):void</code>
+<br>
+</div>
+<a name="maxHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">maxHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var maxHeight:Number = 500</code><p> The maximum height for the visualization bounds. </p></div>
+<a name="maxWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">maxWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var maxWidth:Number = 500</code><p> The maximum width for the visualization bounds. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="AspectRatioBanker()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">AspectRatioBanker</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function AspectRatioBanker(dataField:String = null, bankYAxis:Boolean = true, maxWidth:Number = 500, maxHeight:Number = 500)</code><p>
+   Creates a new AspectRatioBanker. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">dataField</span>:String</code> (default = <code>null</code>)<code></code> &mdash; the data field from which pull numeric values from
+    NodeSprites. These values are then used to determine the optimal
+    aspect ratio.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bankYAxis</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxWidth</span>:Number</code> (default = <code>500</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxHeight</span>:Number</code> (default = <code>500</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="averageAbsoluteAngle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">averageAbsoluteAngle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function averageAbsoluteAngle(a:Array):Number</code><p>
+      Bank the average absolute orientation to 45 degrees.
+      "Slopeless" lines are culled before the banking is computed.
+      Solved using Newton-Raphson iteration.
+      <pre>
+      a     = aspect ratio (as height / width)
+      ci    = normalized slope = N abs(y_i+1 - y_i) / range(y)
+      x     = a ci
+      f(a)  = sum(atan(x)) / N - pi/4
+      f'(a) = sum(ci/(1 + x^2)) / N
+      </pre>
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a</span>:Array</code> &mdash; an array of data values to be banked. It is assumed that
+       values on the opposite axis are evenly spaced.
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the optimized aspect ratio
+      </td>
+</tr>
+</table>
+</div>
+<a name="medianAbsoluteSlope()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">medianAbsoluteSlope</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function medianAbsoluteSlope(a:Array):Number</code><p>
+      Bank the median absolute slope to 45 degrees.
+      "Slopeless" lines are culled before the banking is computed.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">a</span>:Array</code> &mdash; an array of data values to be banked. It is assumed that
+       values on the opposite axis are evenly spaced.
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; the optimized aspect ratio
+      </td>
+</tr>
+</table>
+</div>
+<a name="operate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">operate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function operate(t:<a href="../../animate/Transitioner.html">Transitioner</a> = null):void</code><p> 
+   Performs an operation over the contents of a visualization.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">t</span>:<a href="../../animate/Transitioner.html">Transitioner</a></code> (default = <code>null</code>)<code></code> &mdash; a Transitioner instance for collecting value updates.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
