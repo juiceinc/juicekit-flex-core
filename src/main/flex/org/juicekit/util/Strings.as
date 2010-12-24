@@ -93,6 +93,7 @@ package org.juicekit.util
 		 */
 		public static function align(s:String, align:int):String
 		{
+            
 			var left:Boolean = align < 0;
 			var len:int = left ? -align : align, slen:int = s.length;
 			if (slen > len) {
@@ -193,8 +194,10 @@ package org.juicekit.util
 						idx0 = Math.min(idx1 < 0 ? int.MAX_VALUE : idx1,
 							idx2 < 0 ? int.MAX_VALUE : idx2);
 						
+                        // Index
 						si = idx0 == int.MAX_VALUE ? s : s.substring(0, idx0);
 						sa = idx1 < 0 || idx1 > idx2 ? null : s.substring(idx1 + 1, idx2 < 0 ? s.length : idx2);
+                        // Format
 						sf = idx2 < 0 ? null : s.substring(idx2 + 1);
 						
 						try {

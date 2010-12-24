@@ -180,8 +180,9 @@ package org.juicekit.util
 		 * @param a the array
 		 * @param o the value with which to fill the array
 		 */
-		public static function range(from:Number, to:Number, step:Number=1):Array
+		public static function range(from:Number, to:Number, step:Number=1):Array /*int*/
 		{
+            [ArrayElementType("int")]
 			var result:Array = [];
 			var n:Number;
 			// determine if step is going in the right direction
