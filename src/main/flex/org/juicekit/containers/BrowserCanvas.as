@@ -44,6 +44,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.external.ExternalInterface;
 
+import mx.controls.Alert;
 import mx.core.FlexGlobals;
 import mx.core.IMXMLObject;
 import mx.events.FlexEvent;
@@ -76,7 +77,7 @@ public class BrowserCanvas implements IMXMLObject {
 
     public var containerId:String;
 
-    /** StorageÊfor width and height properties */
+    /** Storage for width and height properties */
     private var _width:String;
     private var _minWidth:String;
     private var _maxWidth:String;
@@ -85,8 +86,16 @@ public class BrowserCanvas implements IMXMLObject {
     private var _minHeight:String;
     private var _maxHeight:String;
 
+    /** Storage for number of frames we have waited */    
+    private var _frameWaitCnt:int = 0;
+    
+    /** Count this number of frames with no resizing before updating size */
+    public var waitFramesBeforeResizing:int = 1;
+    
     private var timerSprite:Sprite;
 
+    public var resizeHeight:Boolean = true;
+    public var resizeWidth:Boolean = true;
 
     /**
      *
@@ -116,7 +125,7 @@ public class BrowserCanvas implements IMXMLObject {
 
         this.containerId = containerId;
         if (this.containerId == null)
-            this.containerId = ExternalInterface.objectID;
+            this.containerId = ExternalInterface.objectID; 
 
         if (browserHacks.length != 0) {
             this.containerId = ExternalInterface.call(JSScripts.INSERT_BROWSER_HACKS, this.containerId, browserHacks.join(","));
@@ -136,8 +145,8 @@ public class BrowserCanvas implements IMXMLObject {
 
 
     private function updateBrowserToApplicationDimensions(e:FlexEvent):void {
-        height = FlexGlobals.topLevelApplication.measuredHeight;
-        width = FlexGlobals.topLevelApplication.measuredWidth;
+        if (resizeHeight) height = FlexGlobals.topLevelApplication.measuredHeight;
+        if (resizeWidth) width = FlexGlobals.topLevelApplication.measuredWidth;
     }
 
     public function set width(newWidth:String):void {
@@ -178,14 +187,22 @@ public class BrowserCanvas implements IMXMLObject {
         return (int(size) == 0) ? size : size + "px";
     }
 
-
     private function invalidate():void {
+        _frameWaitCnt = 0;
         timerSprite.addEventListener(Event.ENTER_FRAME, update);
     }
+    
+    private var running:Boolean;
 
     private function update(event:Event):void {
-        timerSprite.removeEventListener(Event.ENTER_FRAME, update);
-        ExternalInterface.call(JSScripts.RESIZE_CONTAINER, containerId, _width, _height, _minWidth, _minHeight, _maxWidth, _maxHeight);
+        _frameWaitCnt += 1;
+        if (_frameWaitCnt >= waitFramesBeforeResizing && !running) {
+            running = true;
+            _frameWaitCnt = -1;
+            timerSprite.removeEventListener(Event.ENTER_FRAME, update);
+            ExternalInterface.call(JSScripts.RESIZE_CONTAINER, containerId, _width, _height, _minWidth, _minHeight, _maxWidth, _maxHeight);
+            running = false;
+        } 
     }
 
 }
@@ -266,14 +283,19 @@ class JSScripts {
     public static var RESIZE_CONTAINER:XML = <script><![CDATA[
 			  function(containerId,width,height,minWidth,minHeight,maxWidth,maxHeight) {
 				  var objNode = document.getElementById(containerId);
-				  objNode.style.width = width;
-				  objNode.style.height = height;
-				  objNode.style.minWidth = minWidth;
-				  objNode.style.minHeight = minHeight;
-				  objNode.style.maxWidth = maxWidth;
-				  objNode.style.maxHeight = maxHeight;
-				  objNode.attributes.width.nodeValue = width;
-				  objNode.attributes.height.nodeValue = height;
+                    if (objNode.attributes.height.nodeValue != height) {
+                        objNode.attributes.height.nodeValue = height;
+                        objNode.style.height = height;
+                        objNode.style.minHeight = minHeight;
+                        objNode.style.maxHeight = maxHeight;
+                    }
+                    if (objNode.attributes.width.nodeValue != width) {
+                        objNode.attributes.width.nodeValue = width;
+                        objNode.style.width = width;
+                        objNode.style.minWidth = minWidth;
+                        objNode.style.maxWidth = maxWidth;
+                    }
+
 			  }
 			  ]]></script>;
 
