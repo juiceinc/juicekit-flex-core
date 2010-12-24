@@ -139,8 +139,12 @@ package org.juicekit.util
 					try {
 						return x[_field];
 					} catch (e:ReferenceError) {
-						isStyle = true;
-						return x.getStyle(_field);
+                        if (x.hasOwnProperty('getStyle')) {
+                            isStyle = true;
+                            return x.getStyle(_field);
+                        } else {
+                            throw new ReferenceError("Can't access " + _chain.join('.'));
+                        }
 					}
 				}
 			} else {
@@ -148,8 +152,12 @@ package org.juicekit.util
 					try {
 						x = x[_chain[i]];
 					} catch (e:ReferenceError) {
-						isStyle = true;
-						x = x.getStyle(_chain[i]);
+                        if (x.hasOwnProperty('getStyle')) {
+                            isStyle = true;
+                            x = x.getStyle(_chain[i]);
+                        } else {
+                            throw new ReferenceError("Can't access " + _chain.join('.'));
+                        }
 					}
 				}
 				return x;
@@ -173,9 +181,13 @@ package org.juicekit.util
 				} else {
 					try {
 						return x[_field];
-					} catch (e:ReferenceError) {
-						isStyle = true;
-						return x.getStyle(_field);
+					} catch (e:ReferenceError) {                        
+                        if (x.hasOwnProperty('getStyle')) {
+                            isStyle = true;
+                            return x.getStyle(_chain[i]);
+                        } else {
+                            throw new ReferenceError("Can't access " + _chain.join('.'));
+                        }
 					}
 				}
 			} else {
@@ -211,8 +223,12 @@ package org.juicekit.util
 					try {
 						x[_field] = val;
 					} catch (e:ReferenceError) {
-						isStyle = true;
-						x.setStyle(_field, val);
+                        if (x.hasOwnProperty('setStyle')) {
+                            isStyle = true;
+                            x.setStyle(_field, val);
+                        } else {
+                            throw new ReferenceError("Can't access " + _chain.join('.'));
+                        }
 					}
 				}
 				
@@ -226,8 +242,12 @@ package org.juicekit.util
 				try {
 					p[_chain[i]] = val;
 				} catch (e:ReferenceError) {
-					isStyle = true;
-					p.setStyle(_chain[i], val);
+                    if (p.hasOwnProperty('setStyle')) {
+                        isStyle = true;
+                        p.setStyle(_chain[i], val);
+                    } else {
+                        throw new ReferenceError("Can't access " + _chain.join('.'));
+                    }
 				}
 			}
 		}
