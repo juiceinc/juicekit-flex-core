@@ -37,6 +37,7 @@ package org.juicekit.animate.interpolate {
 public class NumberInterpolator extends Interpolator {
     private var _start:Number;
     private var _end:Number;
+    private var isInt:Boolean = false;
 
     /**
      * Creates a new NumberInterpolator.
@@ -47,6 +48,7 @@ public class NumberInterpolator extends Interpolator {
      */
     public function NumberInterpolator(target:Object, property:String,
                                        start:Object, end:Object) {
+        isInt = (start is int && end is int)
         super(target, property, start, end);
     }
 
@@ -67,7 +69,11 @@ public class NumberInterpolator extends Interpolator {
      * @param f the interpolation fraction (typically between 0 and 1)
      */
     public override function interpolate(f:Number):void {
-        _prop.setValue(_target, _start + f * _end);
+        if (isInt) {
+            _prop.setValue(_target, int(_start + f * _end));
+        } else {
+            _prop.setValue(_target, _start + f * _end);
+        }
     }
 
 } // end of class NumberInterpolator
