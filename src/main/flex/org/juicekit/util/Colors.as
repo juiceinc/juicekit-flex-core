@@ -917,9 +917,7 @@ package org.juicekit.util {
 		 * @result a uint that is either white or black based on whichever
 		 * has higher luminosity contrast to c
 		 */
-		public static function whiteOrBlack(c:uint):uint {
-			const white:uint = 0xffffff;
-			const black:uint = 0x000000;
+		public static function whiteOrBlack(c:uint, white:uint=0xffffff, black:uint=0x000000):uint {
 			const whiteDiff:Number = luminosityDifference(c, white);
 			const blackDiff:Number = luminosityDifference(c, black);
 			return (whiteDiff > (blackDiff - 1)) ? white : black;

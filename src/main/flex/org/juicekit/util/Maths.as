@@ -317,7 +317,7 @@ package org.juicekit.util
 		{
 			x = clampValue(x, min, max);
 			var denom:Number = (max - min);
-			return (denom < EPSILON && denom > -EPSILON ? 0 : (x - min) / denom);
+			return (denom < EPSILON && denom > -EPSILON ? 0.5 : (x - min) / denom);
 		}
 		
 		/**
@@ -335,7 +335,7 @@ package org.juicekit.util
 			x = clampValue(x, min, max);
 			min = symLog(min, b);
 			var denom:Number = symLog(max, b) - min;
-			return (denom < EPSILON && denom > -EPSILON ? 0 : (symLog(x, b) - min) / denom);
+			return (denom < EPSILON && denom > -EPSILON ? 0.5 : (symLog(x, b) - min) / denom);
 		}
 		
 		/**
