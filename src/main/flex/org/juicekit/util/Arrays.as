@@ -32,6 +32,8 @@
 
 package org.juicekit.util
 {
+	import flash.utils.Dictionary;
+	
 	import org.juicekit.interfaces.IEvaluable;
 	
 	/**
@@ -340,6 +342,181 @@ package org.juicekit.util
 			for each (var o:Object in a) if (filter == null || filter(o))
 				p.setValue(o, name, v != null ? v(p.$(o)) : value);
 		}
+		
+		
+		
+		/**
+		 * Join two arrays
+		 * 
+		 * @param a an Array
+		 * @param b an Array
+		 * @param joinType One of "inner", "outer", "left", default is "inner"
+		 * @param joinBy An Array of properties, or a String containing a single property, or a 
+		 *               key generation function of signature function(o:Object):String
+		 * @param constructor A function for generating new objects of signature 
+		 *                    function(a:Object, b:Object):Object
+		 * @returns a joined array
+		 */
+		public static function join(a:Array, b:Array, joinType:String='inner', joinBy:Object=null, constructor:*=null):Array
+		{			
+			
+			// A factory function to create key generation functions	
+			function keyFactory(propFields:*):Function
+			{
+				function DEFAULT(o:Object):String {
+					return '';
+				}
+				
+				const joinSeparator:String = '###';
+				var prop:Property;
+				
+				if (propFields is Function)
+				{
+					return propFields as Function;
+				}
+				else if (propFields is String)
+				{
+					prop = Property.$(propFields as String);
+					return function(o:Object):String {
+						return prop.getValue(o).toString();
+					}
+				}
+				else if (propFields is Array) {
+					var propArr:Array = propFields as Array;
+					if (propArr.length == 0)
+					{
+						return DEFAULT;
+					}
+					else if (propArr.length == 1)
+					{
+						prop = Property.$(propFields[0] as String);
+						return function(o:Object):String {
+							return prop.getValue(o).toString();
+						}
+					}
+					else 
+					{
+						var props:Array = [];
+						for each (var propField:String in propArr)
+						{
+							props.push(Property.$(propField));
+						}
+						return function(o:Object):String {
+							var keys:Array = [];
+							for each (prop in props)
+							keys.push(prop.getValue(o).toString());
+							return keys.join(joinSeparator);
+						}
+					}
+				}
+				else 
+				{
+					return DEFAULT;
+				}
+			}
+			
+			// A factory function for creating object constructors (that merge
+			// two matched objects
+			function constructorFactory(constructor:*):Function
+			{
+				function DEFAULT(a:Object, b:Object):Object {
+					var o:Object = {};
+					var k:String;
+					if (a)
+						for (k in a)
+							o[k] = a[k];
+					
+					if (b)
+						for (k in b)
+							o[k] = b[k];
+					
+					return o;
+				}
+				
+				if (constructor is Function) 
+					return constructor;
+				else
+					return DEFAULT;
+				
+			}
+			
+			
+			var key:String, aObj:Object, bObj:Object;
+			var lookup:Dictionary = new Dictionary();
+			
+			// If joinBy is not specified, build a list of matching keys
+			// and use that
+			if (joinBy == null && a.length > 0 && b.length > 0) {
+				joinBy = [];
+				aObj = a[0];
+				bObj = b[0];
+				for (key in aObj) {
+					if (bObj.hasOwnProperty(key)) 
+						joinBy.push(key);
+				}
+			}
+			
+			var keyGenerator:Function = keyFactory(joinBy);
+			var objectConstructor:Function = constructorFactory(constructor);
+			
+			// Build lookup dict from b
+			var idx:int;
+			var len:int = b.length;
+			for (idx=0; idx<len; idx++)
+			{
+				bObj = b[idx];
+				lookup[keyGenerator(bObj)] = bObj; 
+			}
+			
+			
+			// Iterate over a
+			var result:Array = [];
+			len = a.length;
+			for (idx=0; idx<len; idx++)
+			{
+				aObj = a[idx];
+				// build key
+				key = keyGenerator(aObj);
+				// check each item in b
+				if (lookup[key] != undefined)
+					bObj = lookup[key];
+				else
+					bObj = null;
+				if (joinType == 'inner' && bObj == null) 
+					continue;
+				
+				result.push(objectConstructor(aObj, bObj));
+			}
+			
+			// If outer, add only items that are in B but not in A
+			if (joinType == 'outer')
+			{
+				// Build lookup dict from a
+				lookup = new Dictionary();
+				len = a.length;
+				for (idx=0; idx<len; idx++)
+				{
+					aObj = a[idx];
+					lookup[keyGenerator(aObj)] = aObj; 
+				}					
+				
+				len = b.length;
+				for (idx=0; idx<len; idx++)
+				{
+					bObj = b[idx];
+					// build key
+					key = keyGenerator(bObj);
+					// check each item in b
+					if (lookup[key] === undefined)
+					{
+						result.push(objectConstructor(null, bObj));
+					}
+				}
+			}
+			
+			return result;
+		}
+		
 		
 	} // end of class Arrays
 }
