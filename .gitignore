@@ -4,3 +4,5 @@ bin/
 asdoc-output/
 *_temp_flexunit_config.xml
 *.i??
+_site/
+.gradle/
