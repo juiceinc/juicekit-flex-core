@@ -157,7 +157,7 @@ public class Sequence extends Transition {
         // initialize each transition in proper sequence
         for each (var t:Transition in _trans) {
             t.doSetup();
-            t.step(1.0);
+			t.doStep(1.0);
         }
     }
 

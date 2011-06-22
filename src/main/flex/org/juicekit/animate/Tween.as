@@ -181,6 +181,11 @@ public class Tween extends Transition {
             }
         }
     }
+	
+	public function initSetup():void 
+	{
+		this.setup();
+	}
 
     /**
      * Updates target object visibility, if appropriate.
@@ -191,7 +196,7 @@ public class Tween extends Transition {
         if (item != null && Boolean(_visible))
             item.visible = true;
     }
-
+	
     /**
      * Steps the tween, updating the tweened properties.
      */

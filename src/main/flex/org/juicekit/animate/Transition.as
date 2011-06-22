@@ -243,6 +243,11 @@ public class Transition extends EventDispatcher implements ISchedulable {
             dispatchEvent(new TransitionEvent(TransitionEvent.START, this));
         }
     }
+	
+	public function transStep(frac:Number):void 
+	{
+		return doStep(frac);
+	}
 
     /** @private */
     internal function doStep(frac:Number):void {
@@ -317,6 +322,14 @@ public class Transition extends EventDispatcher implements ISchedulable {
     protected function start():void {
         // for sub-classes to implement
     }
+	
+	/**
+	 * An interface to internal step function.
+	 */
+	public function takeStep(f:Number):void
+	{
+		step(f);
+	}
 
     /**
      * Transition step routine. Subclasses should override this function
