@@ -54,8 +54,11 @@ package org.juicekit.util
         
         private var _type:int = -1;
         private var _comp:Function = null;
-        
+
+		/* Number of non-null, non-NaN elements */
         private var _num:Number = 0;
+		/* Number of elements that are null or NaN */
+		private var _numBlank:Number = 0; 
         private var _distinct:Number = 0;
         private var _elm:Array = null;
         
@@ -168,7 +171,9 @@ package org.juicekit.util
             const N:int = _num - 1;
             const pval:Number = p * N;
             
-            if (pval == Math.floor(pval)) {
+			if (N == -1) {
+				return 0;
+			} else if (pval == Math.floor(pval)) {
                 return _elm[pval];	
             } else {
                 return (pval - Math.floor(pval)) * _elm[Math.ceil(pval) as int] + (Math.ceil(pval) - pval) * _elm[Math.floor(pval) as int];
@@ -349,15 +354,31 @@ package org.juicekit.util
             
             // collect all values into element array
             _num = data.length;
+			
             if (_num == 0) return;
-            _elm = (field == null ? (copy ? Arrays.copy(data) : data)
-                : new Array(_num));
+            _elm = new Array();
             if (field != null) {
                 var p:Property = Property.$(field);
                 for (var i:uint = 0; i < _num; ++i) {
-                    _elm[i] = p.getValue(data[i]);
+					var elt:* = p.getValue(data[i]);
+					if (elt == null || isNaN(elt)) {
+						_numBlank += 1;
+					} else {
+						_elm.push(elt);
+					}
                 }
-            }
+            } else {
+				for (i = 0; i < _num; ++i) {
+					elt = data[i];
+					if (elt == null || isNaN(elt)) {
+						_numBlank += 1;
+					} else {
+						_elm.push(elt);
+					}
+				}
+			}
+			
+			_num -= _numBlank;
             
             // determine data type
             for (i = 0; i < _num; ++i) {
