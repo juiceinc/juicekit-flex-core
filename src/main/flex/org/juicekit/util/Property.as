@@ -137,7 +137,9 @@ package org.juicekit.util
 					return x.getStyle(_field);
 				} else {
 					try {
-						return x[_field];
+						x = x[_field];
+						if (x is Function) x = x();
+						return x;
 					} catch (e:ReferenceError) {
                         if (x.hasOwnProperty('getStyle')) {
                             isStyle = true;
@@ -151,6 +153,7 @@ package org.juicekit.util
 				for (var i:uint = 0; i < _chain.length; ++i) {
 					try {
 						x = x[_chain[i]];
+						if (x is Function) x = x();
 					} catch (e:ReferenceError) {
                         if (x.hasOwnProperty('getStyle')) {
                             isStyle = true;
