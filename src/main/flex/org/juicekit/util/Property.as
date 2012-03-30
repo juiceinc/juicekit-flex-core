@@ -112,12 +112,21 @@ package org.juicekit.util
 			_chain = null;
 			
 			if (_field != null) {
-				var parts:Array = _field.split(DELIMITER);
-				if (parts.length > 1) {
-					_chain = [];
-					for (var i:int = 0; i < parts.length; ++i) {
-						if (parts[i].length > 0)
-							_chain.push(parts[i]);
+				
+				// Specify `literal` property name using backticks.
+				// This will not be interpreted as a chain.
+				if (_field.length > 2 && 
+					_field.charAt(0) == '`' && 
+					_field.charAt(_field.length - 1) == '`') {
+					_field = _field.substr(1, _field.length - 2);
+				} else {
+					var parts:Array = _field.split(DELIMITER);
+					if (parts.length > 1) {
+						_chain = [];
+						for (var i:int = 0; i < parts.length; ++i) {
+							if (parts[i].length > 0)
+								_chain.push(parts[i]);
+						}
 					}
 				}
 			}
