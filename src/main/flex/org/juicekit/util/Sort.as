@@ -491,6 +491,139 @@ package org.juicekit.util
 			for (i = 0,p1 = p; i < t.length; ++i,++p1)
 				a[p1] = t[i];
 		}
+		
+		//-----------------------
+		//
+		// Ranking utilities
+		//
+		//-----------------------
+		
+		/**
+		 * Pop off the last item and add the new item in the appropriate place 
+		 * in a sorted array.
+		 * 
+		 * @param arr An array which is in sorted order
+		 * @param item An object to insert into arr
+		 * @param prop A property
+		 * @param ascending What order the array is sorted in.
+		 * @returns Nothing, the array is operated on in place.
+		 *
+		 */
+		private static function injectInArray(arr:Array, item:Object, prop:Property, ascending:Boolean=true):void 
+		{
+			// Remove the last item
+			arr.pop();
+			var minIdx:int = 0, maxIdx:int = arr.length;
+			var val:* = prop.getValue(item);
+			
+			while (maxIdx - minIdx > 1)
+			{
+				var curIdx:int = Math.floor((minIdx + maxIdx) / 2);
+				var idxVal:* = prop.getValue(arr[curIdx]);
+				if (ascending)
+				{
+					if (val < idxVal)
+						maxIdx = curIdx;
+					else
+						minIdx = curIdx;
+				}
+				else 
+				{
+					if (val > idxVal)
+						maxIdx = curIdx;
+					else
+						minIdx = curIdx;
+				}
+			}
+			idxVal = prop.getValue(arr[minIdx]);
+			if (ascending)
+			{
+				if (val > idxVal)
+					minIdx++;					
+			}
+			else
+			{
+				if (val < idxVal)
+					minIdx++;										
+			}
+			
+			// Insert the new item in the right place
+			arr.splice(minIdx, 0, item);
+		}
+		
+		
+		/**
+		 * Return the top n items in sorted order.
+		 * 
+		 * @param arr An input array
+		 * @param propName The property name to sort on
+		 * @param n The number of items to return
+		 * @param ascending Find top items in ascending or descending order
+		 * 
+		 * @returns The top n items ordered by propName
+		 */
+		public static function findTopN(input:Array, propName:String, n:int, ascending:Boolean=true):Array {
+			const len:int = input.length;
+			var prop:Property = Property.$(propName);
+			var result:Array = [];
+			var sortPrefix:String = ascending ? '' : '-';
+			var lastVal:*;
+			var val:*;
+			
+			n = Math.min(n, len);
+			// Fill the array with the top items
+			for (var i:int=0; i<n; i++)
+			{
+				result.push(input[i]);
+			}
+			result.sort(Sort.$(sortPrefix + propName));
+			lastVal = prop.getValue(result[n-1]);
+			for (i=n; i<len; i++)
+			{
+				val = prop.getValue(input[i]);
+				if ((ascending && val < lastVal) ||
+					(!ascending && val > lastVal))
+				{
+					injectInArray(result, input[i], prop, ascending)
+					lastVal = prop.getValue(result[n-1]);
+				}
+			}
+			result.sort(Sort.$(sortPrefix + propName));
+			return result;
+		}
+		
+		/**
+		 * Find the rank of an item in a source array. 
+		 * 
+		 * @param arr An input array
+		 * @param item An item 
+		 * @param propName A property to use for ranking
+		 * @param ascending Rank in ascending or descending order
+		 * 
+		 * @returns The rank
+		 */
+		public static function rankItem(input:Array, item:Object, propName:String, ascending:Boolean=true):int {
+			const len:int = input.length;
+			var prop:Property = Property.$(propName);
+			var val:* = prop.getValue(item);
+			var rank:int = 1;
+			var i:int;
+			// Fill the array with the top items
+			if (ascending)
+			{
+				for (i=0; i<len; i++)
+					if (prop.getValue(input[i]) < val)
+						rank++
+			}
+			else 
+			{
+				for (i=0; i<len; i++)
+					if (prop.getValue(input[i]) > val)
+						rank++
+			}
+			return rank;
+		}		
+		
 
 	} // end of class Sort
 }
