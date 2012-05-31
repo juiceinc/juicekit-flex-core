@@ -282,7 +282,7 @@ package org.juicekit.util
 				return function(a:Object, b:Object, fields:Array=null):int {
 					var da:* = p.getValue(a);
 					var db:* = p.getValue(b);
-					trace(da, db, alphanumCompare(da, db));
+					//trace(da, db, alphanumCompare(da, db));
 					return (asc ? 1 : -1) * alphanumCompare(da, db);
 				}
 			} else {
@@ -385,6 +385,16 @@ package org.juicekit.util
 		 */
 		public static function alphanumCompare(left:Object, right:Object, fields:Array=null):int {
 			var retVal:int = BOTH_ARE_EQUIV;
+			
+			if (left == null)
+			{
+				return (right == null) ? BOTH_ARE_EQUIV : LEFT_IS_LESS_THAN_RIGHT;
+			}
+			if (right == null)
+			{
+				return LEFT_IS_GREATER_THAN_RIGHT;
+			}
+				
 
 			const ls:Array = splitIntoAlphaOrNum(left.toString());
 			const rs:Array = splitIntoAlphaOrNum(right.toString());
