@@ -573,6 +573,10 @@ package org.juicekit.util
 		 * @returns The top n items ordered by propName
 		 */
 		public static function findTopN(input:Array, propName:String, n:int, ascending:Boolean=true):Array {
+			function nanornull(v:*):Boolean {
+				return v == null || (v is Number && isNaN(v));
+			}
+			
 			const len:int = input.length;
 			var prop:Property = Property.$(propName);
 			var result:Array = [];
@@ -581,16 +585,18 @@ package org.juicekit.util
 			var val:*;
 			
 			n = Math.min(n, len);
-			// Fill the array with the top items
-			for (var i:int=0; i<n; i++)
+			// Fill the array with the top items, excluding nulls
+			for (var i:int=0; result.length<n && i<input.length; i++)
 			{
-				result.push(input[i]);
+				if (!nanornull(prop.getValue(input[i])))
+					result.push(input[i]);
 			}
 			result.sort(Sort.$(sortPrefix + propName));
 			lastVal = prop.getValue(result[n-1]);
 			for (; i<len; i++)
 			{
 				val = prop.getValue(input[i]);
+				if (nanornull(val)) continue;
 				if ((ascending && val < lastVal) ||
 					(!ascending && val > lastVal))
 				{
