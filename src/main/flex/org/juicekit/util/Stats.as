@@ -115,15 +115,15 @@ package org.juicekit.util
         /** The 0.025 percentile value (for numerical data). */
         [Bindable(event='statsCalculated')]
         public function get percentileLow():Number {
-            return _percentileLow;
+            return getPercentile(0.025);
         }
         
         /** The 0.975 percentile value (for numerical data). */
         [Bindable(event='statsCalculated')]
         public function get percentileHigh():Number {
-            return _percentileHigh;
+            return getPercentile(0.975);
         }
-        
+        				
         /** The sum of all the values (for numerical data). */
         [Bindable(event='statsCalculated')]
         public function get sum():Number {
@@ -411,11 +411,6 @@ package org.juicekit.util
             var N:int = _num - 1;
             if (_type == NUMBER)
             {
-                
-                //Calculate the 2.5th and the 97.5th percentile of the data
-                _percentileLow = this.getPercentile(0.025);
-                _percentileHigh = this.getPercentile(0.975);
-                
                 _min = (_minObject = _elm[0]) as Number;
                 _max = (_maxObject = _elm[N]) as Number;
                 
