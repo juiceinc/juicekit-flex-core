@@ -603,33 +603,47 @@ package org.juicekit.util
 		}
 		
 		/**
-		 * Find the rank of an item in a source array. 
+		 * Find the rank of an item in a source array excluding null or NaN values. 
 		 * 
 		 * @param arr An input array
 		 * @param item An item 
 		 * @param propName A property to use for ranking
 		 * @param ascending Rank in ascending or descending order
 		 * 
-		 * @returns The rank
+		 * @returns The rank or -1 if the value is null/NaN
 		 */
 		public static function rankItem(input:Array, item:Object, propName:String, ascending:Boolean=true):int {
+			function nanornull(v:*):Boolean {
+				return v == null || (v is Number && isNaN(v));
+			}
+
 			const len:int = input.length;
 			var prop:Property = Property.$(propName);
 			var val:* = prop.getValue(item);
+			var cmpval:*;
 			var rank:int = 1;
 			var i:int;
+			if (nanornull(val)) return -1;
 			// Fill the array with the top items
 			if (ascending)
 			{
 				for (i=0; i<len; i++)
-					if (prop.getValue(input[i]) < val)
-						rank++
+				{
+					cmpval = prop.getValue(input[i]);
+					if (nanornull(cmpval)) continue;
+					if (cmpval < val)
+						rank++;					
+				}
 			}
 			else 
 			{
 				for (i=0; i<len; i++)
-					if (prop.getValue(input[i]) > val)
-						rank++
+				{
+					cmpval = prop.getValue(input[i]);
+					if (nanornull(cmpval)) continue;
+					if (cmpval > val)
+						rank++;
+				}
 			}
 			return rank;
 		}		
