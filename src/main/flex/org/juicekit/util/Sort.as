@@ -588,7 +588,7 @@ package org.juicekit.util
 			}
 			result.sort(Sort.$(sortPrefix + propName));
 			lastVal = prop.getValue(result[n-1]);
-			for (i=n; i<len; i++)
+			for (; i<len; i++)
 			{
 				val = prop.getValue(input[i]);
 				if ((ascending && val < lastVal) ||
