@@ -61,7 +61,10 @@ package org.juicekit.util
 		private static const _LBRACE:Number = '{'.charCodeAt(0);
 		private static const _RBRACE:Number = '}'.charCodeAt(0);
 		private static const _QUOTE:Number = '"'.charCodeAt(0);
+		private static const _BACKTICK:Number = '`'.charCodeAt(0);
 		private static const _APOSTROPHE:Number = '\''.charCodeAt(0);
+		private static const _COLON:Number = ':'.charCodeAt(0);
+		private static const _COMMA:Number = ','.charCodeAt(0);
 		
 		public static const CRLF:String = "\r\n";
 		public static const LF:String = "\n";		
@@ -140,6 +143,7 @@ package org.juicekit.util
 		
 		// --------------------------------------------------------------------
 		
+		
 		/**
 		 * Outputs a formatted string using a set of input arguments and string
 		 * formatting directives. This method uses the String formatting
@@ -164,13 +168,18 @@ package org.juicekit.util
 		{
 			var b:ByteArray = new ByteArray(), a:Array;
 			var esc:Boolean = false, val:*;
+			var inliteral:Boolean = false;
 			var c:Number, idx:int, ialign:int;
 			var idx0:int, idx1:int, idx2:int;
 			var s:String, si:String, sa:String, sf:String;
+			const fmtlength:uint = fmt.length;
 			
-			for (var i:uint = 0; i < fmt.length; ++i) {
+			for (var i:uint = 0; i < fmtlength; ++i) {
 				c = fmt.charCodeAt(i);
-				if (c == _BACKSLASH) {
+				if (c == _BACKTICK) {
+					inliteral = !inliteral;
+				}
+				else if (c == _BACKSLASH && !inliteral) {
 					// note escape char
 					if (esc) b.writeUTFBytes('\\');
 					esc = true;
@@ -182,15 +191,43 @@ package org.juicekit.util
 						esc = false;
 					} else {
 						// get pattern boundary
-						idx = fmt.indexOf("}", i);
+						idx == -1;
+						for (var ii:uint = i; ii < fmtlength; ++ii) {
+							c = fmt.charCodeAt(ii);
+							if (c == _BACKTICK) {
+								inliteral = !inliteral;	
+							}
+							if (c == _RBRACE && !inliteral) {
+								idx = ii;
+								break;
+							}
+						}
+						
 						if (idx < 0)
 							throw new ArgumentError("Invalid format string.");
 						
 						// extract pattern
 						s = fmt.substring(i + 1, idx);
+						var slength:uint = s.length;
+						var sinliteral:Boolean = false;
+
+						// Look for ":" and "," in non backticked
+						// parts of the string.
+						idx2 = -1;
+						idx1 = -1;
+						for (ii = 0; ii < slength; ++ii) {
+							c = s.charCodeAt(ii);
+							if (c == _BACKTICK) {
+								sinliteral = !sinliteral;
+							}
+							if (c == _COLON && !sinliteral) {
+								idx2 = ii;
+							}
+							if (c == _COMMA && !sinliteral) {
+								idx1 = ii;
+							}
+						}
 						
-						idx2 = s.indexOf(":");
-						idx1 = s.indexOf(",");
 						idx0 = Math.min(idx1 < 0 ? int.MAX_VALUE : idx1,
 							idx2 < 0 ? int.MAX_VALUE : idx2);
 						
@@ -227,6 +264,8 @@ package org.juicekit.util
 			// finally adjust string alignment as needed
 			return (sa != null ? align(s, ialign) : s);
 		}
+		
+
 		
 		private static function pattern(b:ByteArray, pat:String, value:*):void
 		{
