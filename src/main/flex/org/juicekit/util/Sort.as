@@ -616,9 +616,10 @@ package org.juicekit.util
 		 * @param propName A property to use for ranking
 		 * @param ascending Rank in ascending or descending order
 		 * 
-		 * @returns The rank or -1 if the value is null/NaN
+		 * @returns a simple object containing rank as an integer and value as keys. 
+		 * The rank is -1 if the value is null/NaN.
 		 */
-		public static function rankItem(input:Array, item:Object, propName:String, ascending:Boolean=true):int {
+		public static function rankItem(input:Array, item:Object, propName:String, ascending:Boolean=true):Object {
 			function nanornull(v:*):Boolean {
 				return v == null || (v is Number && isNaN(v));
 			}
@@ -629,7 +630,11 @@ package org.juicekit.util
 			var cmpval:*;
 			var rank:int = 1;
 			var i:int;
-			if (nanornull(val)) return -1;
+			if (nanornull(val)) 
+			{
+				return { rank: -1, value: val };
+			}
+			
 			// Fill the array with the top items
 			if (ascending)
 			{
@@ -651,7 +656,7 @@ package org.juicekit.util
 						rank++;
 				}
 			}
-			return rank;
+			return { rank: rank, value: val };
 		}		
 		
 
