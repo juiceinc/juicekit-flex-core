@@ -269,6 +269,38 @@ package org.juicekit.util
 		
 		private static function pattern(b:ByteArray, pat:String, value:*):void
 		{
+			var prefix:String = '';
+			var suffix:String = '';
+			var end:int = -1;
+			var start:int = -1;
+			
+			// Search for literals represented by chars in backticks as a prefix
+			// for instance, Strings.format("{0:`moo`0}", 5) => moo5
+			if (pat.charAt(0) == '`') {
+				end = pat.indexOf('`', 1);
+				if (end != -1) {
+					prefix = pat.substr(1, end - 1);				
+					pat = pat.substr(end+1);							
+					b.writeUTFBytes(prefix);
+				} else {
+					pat = pat.substr(1);
+				}
+			}
+			
+			// Search for literals represented by chars in backticks as a suffix
+			// for instance, Strings.format("{0:0`moo`}", 5) => 5moo
+			var patlen:int = pat.length;
+			if (pat.charAt(patlen - 1) == '`') {
+				start = pat.substr(0, patlen-2).lastIndexOf('`');
+				if (start != -1) {
+					suffix = pat.substr(start + 1, patlen - start - 2);
+					pat = pat.substr(0, start);
+				} else {
+					pat = pat.substr(0, patlen - 1);
+				}
+			}
+			
+			
 			if (pat == null) {
 				b.writeUTFBytes(String(value));
 			} else if (value is Date) {
@@ -277,6 +309,10 @@ package org.juicekit.util
 				numberPattern(b, pat, Number(value));
 			} else {
 				b.writeUTFBytes(String(value));
+			}
+			
+			if (suffix.length > 0) {
+				b.writeUTFBytes(suffix);				
 			}
 		}
 		
