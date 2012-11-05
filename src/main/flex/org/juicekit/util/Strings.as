@@ -590,6 +590,7 @@ package org.juicekit.util
 		};
 		
 		private static const _MIL_SUFFIX:Object = {
+			9: 'bil',
 			6: 'mil',
 			3: 'k',
 			0: ''
@@ -667,11 +668,11 @@ package org.juicekit.util
 					b.writeUTFBytes(_STD_SUFFIX[strExp]);
 				}
 				else if (s == 'k') {
-					// This format appends mil/k values for numbers
+					// This format appends bil/mil/k values for numbers
 					// - Sal Uryasev
 					exp = Math.round(1000000 * Math.log(Math.abs(x)) / Math.LN10) / 1000000;
 					exp = 3 * (exp >= 0 ? int(exp / 3) : int((exp / 3) - 1));
-					exp = (exp > 6 ? 6 : (exp < 0 ? 0 : exp));
+					exp = (exp > 9 ? 9 : (exp < 0 ? 0 : exp));
 					
 					numberPattern(b, "0." + repeat("0", digits), x / Math.pow(10, exp));
 					b.writeUTFBytes(_MIL_SUFFIX[exp.toString()]);
