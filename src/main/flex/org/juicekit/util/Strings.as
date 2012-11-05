@@ -306,7 +306,14 @@ package org.juicekit.util
 			} else if (value is Date) {
 				datePattern(b, pat, value as Date);
 			} else if (value is Number) {
-				numberPattern(b, pat, Number(value));
+				// Search for a divisor
+				var parts:Array = pat.split('/');
+				var divisor:Number = 1;
+				if (parts.length == 2) {
+					divisor = Number(parts[1]);
+					pat = parts[0];
+				}
+				numberPattern(b, pat, Number(value) / divisor);
 			} else {
 				b.writeUTFBytes(String(value));
 			}
