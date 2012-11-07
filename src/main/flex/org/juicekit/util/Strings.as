@@ -274,9 +274,18 @@ package org.juicekit.util
 			var end:int = -1;
 			var start:int = -1;
 			
+			// Don't format the pattern unless its a date or a number AND we 
+			// have a pattern string.
+			if (pat == null ||
+				!(value is Date || value is Number))
+			{
+				b.writeUTFBytes(String(value));
+				return;
+			}
+			
 			// Search for literals represented by chars in backticks as a prefix
 			// for instance, Strings.format("{0:`moo`0}", 5) => moo5
-			if (pat.charAt(0) == '`') {
+			if (pat != null && pat.charAt(0) == '`') {
 				end = pat.indexOf('`', 1);
 				if (end != -1) {
 					prefix = pat.substr(1, end - 1);				
@@ -300,10 +309,7 @@ package org.juicekit.util
 				}
 			}
 			
-			
-			if (pat == null) {
-				b.writeUTFBytes(String(value));
-			} else if (value is Date) {
+			if (value is Date) {
 				datePattern(b, pat, value as Date);
 			} else if (value is Number) {
 				// Search for a divisor
@@ -314,9 +320,7 @@ package org.juicekit.util
 					pat = parts[0];
 				}
 				numberPattern(b, pat, Number(value) / divisor);
-			} else {
-				b.writeUTFBytes(String(value));
-			}
+			} 
 			
 			if (suffix.length > 0) {
 				b.writeUTFBytes(suffix);				
