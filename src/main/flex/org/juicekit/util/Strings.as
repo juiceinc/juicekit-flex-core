@@ -678,7 +678,11 @@ package org.juicekit.util
 					exp = 3 * (exp >= 0 ? int(exp / 3) : int((exp / 3) - 1));
 					exp = (exp > 9 ? 9 : (exp < 0 ? 0 : exp));
 					
-					numberPattern(b, "0." + repeat("0", digits), x / Math.pow(10, exp));
+					if (digits == 0) {
+						numberPattern(b, "0", x / Math.pow(10, exp));
+					} else {
+						numberPattern(b, "0." + repeat("0", digits), x / Math.pow(10, exp));
+					}
 					b.writeUTFBytes(_MIL_SUFFIX[exp.toString()]);
 				}
 					

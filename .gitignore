@@ -6,3 +6,5 @@ asdoc-output/
 *.i??
 _site/
 .gradle/
+.actionScriptProperties
+.fxpProperties
